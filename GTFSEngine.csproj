@@ -84,7 +84,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="_Documentation\FAQ - UTF-8, UTF-16, UTF-32 &amp; BOM.mht" />
     <None Include="_Documentation\General Transit Feed Specification - Google Code.mht" />
+    <None Include="_Documentation\RFC 2234 - Augmented BNF for Syntax Specifications ABNF.mht" />
+    <None Include="_Documentation\RFC 4180 - Common Format and MIME Type for Comma-Separated Values %28CSV%29 Files.mht" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\..\..\Code\Ximura\Ximura\Ximura %28Silverlight 4%29.csproj">
