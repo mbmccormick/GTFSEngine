@@ -56,36 +56,49 @@
     <Compile Include="Load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="TestData\agency.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\agency.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\trips.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\trips.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\calendar.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\calendar.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\calendar_dates.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\calendar_dates.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\fare_attributes.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\fare_attributes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\fare_rules.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\fare_rules.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\routes.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\routes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\shapes.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\shapes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\stop_times.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\stop_times.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\stops.txt" />
+    <EmbeddedResource Include="TestData\Caltrain\stops.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestData\Seattle\agency.txt" />
+    <Content Include="TestData\Seattle\calendar.txt" />
+    <Content Include="TestData\Seattle\calendar_dates.txt" />
+    <Content Include="TestData\Seattle\fare_attributes.txt" />
+    <Content Include="TestData\Seattle\fare_rules.txt" />
+    <Content Include="TestData\Seattle\Frequencies.txt" />
+    <Content Include="TestData\Seattle\pattern_pairs.txt" />
+    <Content Include="TestData\Seattle\routes.txt" />
+    <Content Include="TestData\Seattle\shapes.txt" />
+    <Content Include="TestData\Seattle\stops.txt" />
+    <Content Include="TestData\Seattle\stop_times.txt" />
+    <Content Include="TestData\Seattle\trips.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
