@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTFSEngine", "GTFSEngine.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_GTFSEngine", "Unit Test\Test_GTFSEngine.csproj", "{10FA9325-1499-4D06-95FF-85B92E839769}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ximura", "Ximura", "{BDF6F3AD-47FA-46B9-845E-BB58FA7E7754}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Caltrain 511.vsmdi
@@ -44,5 +46,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{084E02AA-8C87-4165-A346-A70DF2054C87} = {95F54596-0CB3-4FFF-A910-6D36812DBE5A}
 		{10FA9325-1499-4D06-95FF-85B92E839769} = {95F54596-0CB3-4FFF-A910-6D36812DBE5A}
+		{28E2E204-A156-42E5-BE9A-6A518B4C9694} = {BDF6F3AD-47FA-46B9-845E-BB58FA7E7754}
 	EndGlobalSection
 EndGlobal
