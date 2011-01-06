@@ -1,0 +1,857 @@
+From: "Saved by Windows Internet Explorer 8"
+Subject: RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files
+Date: Sun, 26 Dec 2010 15:36:35 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://tools.ietf.org/html/rfc4180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.1.7600.16543
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Den xml:lang=3D"en" =
+xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD=20
+profile=3D"http://dublincore.org/documents/2008/08/04/dc-html/"><TITLE>RF=
+C 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) =
+Files</TITLE>
+<META content=3D"text/html; charset=3Dutf-8" http-equiv=3DContent-Type>
+<META name=3Drobots content=3Dindex,follow>
+<META name=3Dcreator content=3D"rfcmarkup version 1.91"><LINK =
+rel=3Dschema.DC=20
+href=3D"http://purl.org/dc/elements/1.1/">
+<META name=3DDC.Identifier content=3Durn:ietf:rfc:4180>
+<META name=3DDC.Description.Abstract=20
+content=3D"This RFC documents the format used for Comma-Separated Values =
+(CSV)\nfiles and registers the associated MIME type "=20
+community.? Internet the for information memo\nprovides This csv?. text>
+<META name=3DDC.Creator content=3D"Yakov Shafranovich =
+<ietf@shaftek.org>">
+<META name=3DDC.Date.Issued content=3D"October, 2005">
+<META name=3DDC.Title=20
+content=3D"Common Format and MIME Type for Comma-Separated Values (CSV) =
+Files"><LINK=20
+rel=3Dicon type=3Dimage/png href=3D"/images/rfc.png"><LINK =
+rel=3D"shortcut icon"=20
+type=3Dimage/png href=3D"/images/rfc.png">
+<STYLE type=3Dtext/css>BODY {
+	MARGIN: 0px 8px; FONT-SIZE: 1em
+}
+H1 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H2 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H3 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H4 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H5 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H6 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h1 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h2 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h3 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h4 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h5 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h6 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; FONT-SIZE: 1em
+}
+.pre {
+	FONT-FAMILY: monospace; WHITE-SPACE: pre
+}
+.header {
+	FONT-WEIGHT: bold
+}
+.newpage {
+	PAGE-BREAK-BEFORE: always
+}
+.invisible {
+	COLOR: white; TEXT-DECORATION: none
+}
+
+@media Print   =20
+{
+BODY {
+	FONT-SIZE: 10.5pt
+}
+H1 {
+	FONT-SIZE: 10.5pt
+}
+H2 {
+	FONT-SIZE: 10.5pt
+}
+H3 {
+	FONT-SIZE: 10.5pt
+}
+H4 {
+	FONT-SIZE: 10.5pt
+}
+H5 {
+	FONT-SIZE: 10.5pt
+}
+H6 {
+	FONT-SIZE: 10.5pt
+}
+A:link {
+	COLOR: inherit; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: inherit; TEXT-DECORATION: none
+}
+.noprint {
+	DISPLAY: none
+}
+
+}
+
+@media Screen   =20
+{
+.grey {
+	COLOR: #777
+}
+.grey A:link {
+	COLOR: #777
+}
+.grey A:visited {
+	COLOR: #777
+}
+.docinfo {
+	BACKGROUND-COLOR: #eee
+}
+.top {
+	BORDER-TOP: #eee 7px solid
+}
+.bgwhite {
+	BACKGROUND-COLOR: white
+}
+.bgred {
+	BACKGROUND-COLOR: #f44
+}
+.bggrey {
+	BACKGROUND-COLOR: #666
+}
+.bgbrown {
+	BACKGROUND-COLOR: #840
+}
+.bgorange {
+	BACKGROUND-COLOR: #fa0
+}
+.bgyellow {
+	BACKGROUND-COLOR: #ee0
+}
+.bgmagenta {
+	BACKGROUND-COLOR: #f4f
+}
+.bgblue {
+	BACKGROUND-COLOR: #66f
+}
+.bgcyan {
+	BACKGROUND-COLOR: #4dd
+}
+.bggreen {
+	BACKGROUND-COLOR: #4f4
+}
+.legend {
+	FONT-SIZE: 90%
+}
+.cplate {
+	BORDER-BOTTOM: grey 1px solid; BORDER-LEFT: grey 1px solid; FONT-SIZE: =
+70%; BORDER-TOP: grey 1px solid; BORDER-RIGHT: grey 1px solid
+}
+
+}
+</STYLE>
+<!--[if IE]>
+<STYLE>BODY {
+	MARGIN: 10px; FONT-SIZE: 13px
+}
+</STYLE>
+<![endif]-->
+<SCRIPT type=3Dtext/javascript><!--=0A=
+    function addHeaderTags() {=0A=
+	var spans =3D document.getElementsByTagName("span");=0A=
+	for (var i=3D0; i < spans.length; i++) {=0A=
+	    var elem =3D spans[i];=0A=
+	    if (elem) {=0A=
+		var level =3D elem.getAttribute("class");=0A=
+                if (level =3D=3D "h1" || level =3D=3D "h2" || level =
+=3D=3D "h3" || level =3D=3D "h4" || level =3D=3D "h5" || level =3D=3D =
+"h6") {=0A=
+                    elem.innerHTML =3D =
+"<"+level+">"+elem.innerHTML+"</"+level+">";		=0A=
+                }=0A=
+	    }=0A=
+	}=0A=
+    }=0A=
+    var legend_html =3D "Colour legend:<br />      <table>         =
+<tr><td>Unknown:</td>          <td><span class=3D'cplate =
+bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Draft:</td>            <td><span class=3D'cplate =
+bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Informational:</td>    <td><span class=3D'cplate =
+bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Experimental:</td>     <td><span class=3D'cplate =
+bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         <tr><td>Best =
+Common Practice:</td><td><span class=3D'cplate =
+bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Proposed Standard:</td><td><span class=3D'cplate =
+bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         <tr><td>Draft =
+Standard:</td>   <td><span class=3D'cplate =
+bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Standard:</td>         <td><span class=3D'cplate =
+bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Historic:</td>         <td><span class=3D'cplate =
+bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Obsolete:</td>         <td><span class=3D'cplate =
+bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>     </table>";=0A=
+    function showElem(id) {=0A=
+        var elem =3D document.getElementById(id);=0A=
+        elem.innerHTML =3D eval(id+"_html");=0A=
+        elem.style.visibility=3D'visible';=0A=
+    }=0A=
+    function hideElem(id) {=0A=
+        var elem =3D document.getElementById(id);=0A=
+        elem.style.visibility=3D'hidden';        =0A=
+        elem.innerHTML =3D "";=0A=
+    }=0A=
+    // -->=0A=
+    </SCRIPT>
+
+<META name=3DGENERATOR content=3D"MSHTML 8.00.7600.16700"></HEAD>
+<BODY onload=3DaddHeaderTags()>
+<DIV style=3D"HEIGHT: 13px"><DIV style=3D"POSITION: absolute; HEIGHT: =
+6px" class=3D"pre noprint docinfo bgorange" =
+onmouseover=3D"this.style.cursor=3D'pointer';" title=3D"Click for colour =
+legend." onmouseout=3D"hideElem('legend')" =
+onclick=3D"showElem('legend');">                                         =
+                               </DIV><DIV style=3D"BORDER-BOTTOM: #345 =
+1px solid; POSITION: absolute; BORDER-LEFT: #345 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: white; PADDING-LEFT: 7px; =
+PADDING-RIGHT: 9px; VISIBILITY: hidden; BORDER-TOP: #345 1px solid; TOP: =
+4px; BORDER-RIGHT: #345 1px solid; PADDING-TOP: 4px; LEFT: 4ex" =
+id=3Dlegend class=3D"docinfo noprint pre legend" =
+onmouseover=3D"showElem('legend');" onmouseout=3D"hideElem('legend');">  =
+    </DIV></DIV><SPAN class=3D"pre noprint docinfo top">[<A =
+title=3D"Document search and retrieval page" =
+href=3D"http://tools.ietf.org/html/">Docs</A>] [<A title=3D"Plaintext =
+version of this document" =
+href=3D"http://tools.ietf.org/rfc/rfc4180.txt">txt</A>|<A title=3D"PDF =
+version of this document" =
+href=3D"http://tools.ietf.org/pdf/rfc4180">pdf</A>] [<A =
+title=3Ddraft-shafranovich-mime-csv =
+href=3D"http://tools.ietf.org/html/draft-shafranovich-mime-csv">draft-sha=
+franovic...</A>] [<A title=3D"Inline diff (wdiff)" =
+href=3D"http://tools.ietf.org/rfcdiff?difftype=3D--hwdiff&amp;url2=3Drfc4=
+180">Diff1</A>]  [<A title=3D"Side-by-side diff" =
+href=3D"http://tools.ietf.org/rfcdiff?url2=3Drfc4180">Diff2</A>]         =
+        </SPAN><BR><SPAN class=3D"pre noprint docinfo">                  =
+                                                      </SPAN><BR><SPAN =
+class=3D"pre noprint docinfo">                                           =
+                INFORMATIONAL</SPAN><BR><SPAN class=3D"pre noprint =
+docinfo">                                                                =
+        </SPAN><BR><PRE>Network Working Group                            =
+        Y. Shafranovich
+Request for Comments: 4180                SolidMatrix Technologies, Inc.
+Category: Informational                                     October 2005
+
+
+   <SPAN class=3Dh1>Common Format and MIME Type for Comma-Separated =
+Values (CSV) Files</SPAN>
+
+Status of This Memo
+
+   This memo provides information for the Internet community.  It does
+   not specify an Internet standard of any kind.  Distribution of this
+   memo is unlimited.
+
+Copyright Notice
+
+   Copyright (C) The Internet Society (2005).
+
+Abstract
+
+   This RFC documents the format used for Comma-Separated Values (CSV)
+   files and registers the associated MIME type "text/csv".
+
+Table of Contents
+
+   <A href=3D"http://tools.ietf.org/html/rfc4180#section-1">1</A>. =
+Introduction ....................................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-2">2</A>
+   <A href=3D"http://tools.ietf.org/html/rfc4180#section-2">2</A>. =
+Definition of the CSV Format ....................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-2">2</A>
+   <A href=3D"http://tools.ietf.org/html/rfc4180#section-3">3</A>. MIME =
+Type Registration of text/csv ..............................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-4">4</A>
+   <A href=3D"http://tools.ietf.org/html/rfc4180#section-4">4</A>. IANA =
+Considerations .............................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-5">5</A>
+   <A href=3D"http://tools.ietf.org/html/rfc4180#section-5">5</A>. =
+Security Considerations .........................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-5">5</A>
+   <A href=3D"http://tools.ietf.org/html/rfc4180#section-6">6</A>. =
+Acknowledgments .................................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-6">6</A>
+   <A href=3D"http://tools.ietf.org/html/rfc4180#section-7">7</A>. =
+References ......................................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-6">6</A>
+      <A =
+href=3D"http://tools.ietf.org/html/rfc4180#section-7.1">7.1</A>. =
+Normative References .......................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-6">6</A>
+      <A =
+href=3D"http://tools.ietf.org/html/rfc4180#section-7.2">7.2</A>. =
+Informative References .....................................<A =
+href=3D"http://tools.ietf.org/html/rfc4180#page-6">6</A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Shafranovich                 Informational            =
+          [Page 1]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-2 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc4180#page-2" name=3Dpage-2> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc4180">RFC =
+4180</A>       Common Format and MIME Type for CSV Files    October =
+2005</SPAN>
+
+
+<SPAN class=3Dh2><A name=3Dsection-1>1</A>.  Introduction</SPAN>
+
+   The comma separated values format (CSV) has been used for exchanging
+   and converting data between various spreadsheet programs for quite
+   some time.  Surprisingly, while this format is very common, it has
+   never been formally documented.  Additionally, while the IANA MIME
+   registration tree includes a registration for
+   "text/tab-separated-values" type, no MIME types have ever been
+   registered with IANA for CSV.  At the same time, various programs and
+   operating systems have begun to use different MIME types for this
+   format.  This RFC documents the format of comma separated values
+   (CSV) files and formally registers the "text/csv" MIME type for CSV
+   in accordance with <A href=3D"http://tools.ietf.org/html/rfc2048">RFC =
+2048</A> [<A title=3D'"Multipurpose Internet Mail Extensions (MIME) Part =
+Four: Registration Procedures"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-1">1</A>].
+
+<SPAN class=3Dh2><A name=3Dsection-2>2</A>.  Definition of the CSV =
+Format</SPAN>
+
+   While there are various specifications and implementations for the
+   CSV format (for ex. [<A title=3D'"HOW-TO: The Comma Separated Value =
+(CSV) File Format"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-4">4</A>], [<A =
+title=3D'"CSV Standard File Format"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-5">5</A>], [<A =
+title=3D'"Documentation for Ricebridge CSV Manager"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-6">6</A>] and [<A =
+title=3D'"The Art of Unix Programming, Chapter 5"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-7">7</A>]), there is no =
+formal
+   specification in existence, which allows for a wide variety of
+   interpretations of CSV files.  This section documents the format that
+   seems to be followed by most implementations:
+
+   1.  Each record is located on a separate line, delimited by a line
+       break (CRLF).  For example:
+
+       aaa,bbb,ccc CRLF
+       zzz,yyy,xxx CRLF
+
+   2.  The last record in the file may or may not have an ending line
+       break.  For example:
+
+       aaa,bbb,ccc CRLF
+       zzz,yyy,xxx
+
+   3.  There maybe an optional header line appearing as the first line
+       of the file with the same format as normal record lines.  This
+       header will contain names corresponding to the fields in the file
+       and should contain the same number of fields as the records in
+       the rest of the file (the presence or absence of the header line
+       should be indicated via the optional "header" parameter of this
+       MIME type).  For example:
+
+       field_name,field_name,field_name CRLF
+       aaa,bbb,ccc CRLF
+       zzz,yyy,xxx CRLF
+
+
+
+
+
+
+<SPAN class=3Dgrey>Shafranovich                 Informational            =
+          [Page 2]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-3 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc4180#page-3" name=3Dpage-3> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc4180">RFC =
+4180</A>       Common Format and MIME Type for CSV Files    October =
+2005</SPAN>
+
+
+   4.  Within the header and each record, there may be one or more
+       fields, separated by commas.  Each line should contain the same
+       number of fields throughout the file.  Spaces are considered part
+       of a field and should not be ignored.  The last field in the
+       record must not be followed by a comma.  For example:
+
+       aaa,bbb,ccc
+
+   5.  Each field may or may not be enclosed in double quotes (however
+       some programs, such as Microsoft Excel, do not use double quotes
+       at all).  If fields are not enclosed with double quotes, then
+       double quotes may not appear inside the fields.  For example:
+
+       "aaa","bbb","ccc" CRLF
+       zzz,yyy,xxx
+
+   6.  Fields containing line breaks (CRLF), double quotes, and commas
+       should be enclosed in double-quotes.  For example:
+
+       "aaa","b CRLF
+       bb","ccc" CRLF
+       zzz,yyy,xxx
+
+   7.  If double-quotes are used to enclose fields, then a double-quote
+       appearing inside a field must be escaped by preceding it with
+       another double quote.  For example:
+
+       "aaa","b""bb","ccc"
+
+   The ABNF grammar [<A title=3D'"Augmented BNF for Syntax =
+Specifications: ABNF"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-2">2</A>] appears as =
+follows:
+
+   file =3D [header CRLF] record *(CRLF record) [CRLF]
+
+   header =3D name *(COMMA name)
+
+   record =3D field *(COMMA field)
+
+   name =3D field
+
+   field =3D (escaped / non-escaped)
+
+   escaped =3D DQUOTE *(TEXTDATA / COMMA / CR / LF / 2DQUOTE) DQUOTE
+
+   non-escaped =3D *TEXTDATA
+
+   COMMA =3D %x2C
+
+   CR =3D %x0D ;as per <A =
+href=3D"http://tools.ietf.org/html/rfc2234#section-6.1">section&nbsp;6.1 =
+of RFC 2234</A> [<A title=3D'"Augmented BNF for Syntax Specifications: =
+ABNF"' href=3D"http://tools.ietf.org/html/rfc4180#ref-2">2</A>]
+
+
+
+<SPAN class=3Dgrey>Shafranovich                 Informational            =
+          [Page 3]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-4 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc4180#page-4" name=3Dpage-4> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc4180">RFC =
+4180</A>       Common Format and MIME Type for CSV Files    October =
+2005</SPAN>
+
+
+   DQUOTE =3D  %x22 ;as per <A =
+href=3D"http://tools.ietf.org/html/rfc2234#section-6.1">section&nbsp;6.1 =
+of RFC 2234</A> [<A title=3D'"Augmented BNF for Syntax Specifications: =
+ABNF"' href=3D"http://tools.ietf.org/html/rfc4180#ref-2">2</A>]
+
+   LF =3D %x0A ;as per <A =
+href=3D"http://tools.ietf.org/html/rfc2234#section-6.1">section&nbsp;6.1 =
+of RFC 2234</A> [<A title=3D'"Augmented BNF for Syntax Specifications: =
+ABNF"' href=3D"http://tools.ietf.org/html/rfc4180#ref-2">2</A>]
+
+   CRLF =3D CR LF ;as per <A =
+href=3D"http://tools.ietf.org/html/rfc2234#section-6.1">section&nbsp;6.1 =
+of RFC 2234</A> [<A title=3D'"Augmented BNF for Syntax Specifications: =
+ABNF"' href=3D"http://tools.ietf.org/html/rfc4180#ref-2">2</A>]
+
+   TEXTDATA =3D  %x20-21 / %x23-2B / %x2D-7E
+
+<SPAN class=3Dh2><A name=3Dsection-3>3</A>.  MIME Type Registration of =
+text/csv</SPAN>
+
+   This section provides the media-type registration application (as per
+   <A href=3D"http://tools.ietf.org/html/rfc2048">RFC 2048</A> [<A =
+title=3D'"Multipurpose Internet Mail Extensions (MIME) Part Four: =
+Registration Procedures"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-1">1</A>].
+
+   To: ietf-types@iana.org
+
+   Subject: Registration of MIME media type text/csv
+
+   MIME media type name: text
+
+   MIME subtype name: csv
+
+   Required parameters: none
+
+   Optional parameters: charset, header
+
+      Common usage of CSV is US-ASCII, but other character sets defined
+      by IANA for the "text" tree may be used in conjunction with the
+      "charset" parameter.
+
+      The "header" parameter indicates the presence or absence of the
+      header line.  Valid values are "present" or "absent".
+      Implementors choosing not to use this parameter must make their
+      own decisions as to whether the header line is present or absent.
+
+   Encoding considerations:
+
+      As per <A =
+href=3D"http://tools.ietf.org/html/rfc4180#section-4.1.1">section =
+4.1.1</A>. of <A href=3D"http://tools.ietf.org/html/rfc2046">RFC =
+2046</A> [<A title=3D'"Multipurpose Internet Mail Extensions (MIME) Part =
+Two: Media Types"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-3">3</A>], this media =
+type uses CRLF
+      to denote line breaks.  However, implementors should be aware that
+      some implementations may use other values.
+
+   Security considerations:
+
+      CSV files contain passive text data that should not pose any
+      risks.  However, it is possible in theory that malicious binary
+      data may be included in order to exploit potential buffer overruns
+      in the program processing CSV data.  Additionally, private data
+      may be shared via this format (which of course applies to any text
+      data).
+
+
+
+<SPAN class=3Dgrey>Shafranovich                 Informational            =
+          [Page 4]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-5 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc4180#page-5" name=3Dpage-5> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc4180">RFC =
+4180</A>       Common Format and MIME Type for CSV Files    October =
+2005</SPAN>
+
+
+   Interoperability considerations:
+
+      Due to lack of a single specification, there are considerable
+      differences among implementations.  Implementors should "be
+      conservative in what you do, be liberal in what you accept from
+      others" (<A href=3D"http://tools.ietf.org/html/rfc793">RFC 793</A> =
+[<A title=3D'"Transmission Control Protocol"' =
+href=3D"http://tools.ietf.org/html/rfc4180#ref-8">8</A>]) when =
+processing CSV files.  An attempt at a
+      common definition can be found in <A =
+href=3D"http://tools.ietf.org/html/rfc4180#section-2">Section 2</A>.
+
+      Implementations deciding not to use the optional "header"
+      parameter must make their own decision as to whether the header is
+      absent or present.
+
+   Published specification:
+
+      While numerous private specifications exist for various programs
+      and systems, there is no single "master" specification for this
+      format.  An attempt at a common definition can be found in <A =
+href=3D"http://tools.ietf.org/html/rfc4180#section-">Section</A>
+      <A href=3D"http://tools.ietf.org/html/rfc4180#section-">2</A>.
+
+   Applications that use this media type:
+
+      Spreadsheet programs and various data conversion utilities
+
+   Additional information:
+
+      Magic number(s): none
+
+      File extension(s): CSV
+
+      Macintosh File Type Code(s): TEXT
+
+   Person &amp; email address to contact for further information:
+
+      Yakov Shafranovich &lt;ietf@shaftek.org&gt;
+
+   Intended usage: COMMON
+
+   Author/Change controller: IESG
+
+<SPAN class=3Dh2><A name=3Dsection-4>4</A>.  IANA Considerations</SPAN>
+
+   The IANA has registered the MIME type "text/csv" using the
+   application provided in <A =
+href=3D"http://tools.ietf.org/html/rfc4180#section-3">Section 3</A> of =
+this document.
+
+<SPAN class=3Dh2><A name=3Dsection-5>5</A>.  Security =
+Considerations</SPAN>
+
+   See discussion above in <A =
+href=3D"http://tools.ietf.org/html/rfc4180#section-3">section 3</A>.
+
+
+
+
+<SPAN class=3Dgrey>Shafranovich                 Informational            =
+          [Page 5]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-6 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc4180#page-6" name=3Dpage-6> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc4180">RFC =
+4180</A>       Common Format and MIME Type for CSV Files    October =
+2005</SPAN>
+
+
+<SPAN class=3Dh2><A name=3Dsection-6>6</A>.  Acknowledgments</SPAN>
+
+   The author would like to thank Dave Crocker, Martin Duerst, Joel M.
+   Halpern, Clyde Ingram, Graham Klyne, Bruce Lilly, Chris Lilley, and
+   members of the IESG for their helpful suggestions.  A special word of
+   thanks goes to Dave for helping with the ABNF grammar.
+
+   The author would also like to thank Henrik Lefkowetz, Marshall Rose,
+   and the folks at xml.resource.org for providing many of the tools
+   used for preparing RFCs and Internet drafts.
+
+   A special thank you goes to L.T.S.
+
+<SPAN class=3Dh2><A name=3Dsection-7>7</A>.  References</SPAN>
+
+<SPAN class=3Dh3><A name=3Dsection-7.1>7.1</A>.  Normative =
+References</SPAN>
+
+   [<A id=3Dref-1 name=3Dref-1>1</A>]  Freed, N., Klensin, J., and J. =
+Postel, "Multipurpose Internet
+        Mail Extensions (MIME) Part Four: Registration Procedures", <A =
+href=3D"http://tools.ietf.org/html/bcp13">BCP</A>
+        <A href=3D"http://tools.ietf.org/html/bcp13">13</A>, <A =
+href=3D"http://tools.ietf.org/html/rfc2048">RFC 2048</A>, November 1996.
+
+   [<A id=3Dref-2 name=3Dref-2>2</A>]  Crocker, D. and P. Overell, =
+"Augmented BNF for Syntax
+        Specifications: ABNF", <A =
+href=3D"http://tools.ietf.org/html/rfc2234">RFC 2234</A>, November 1997.
+
+   [<A id=3Dref-3 name=3Dref-3>3</A>]  Freed, N. and N. Borenstein, =
+"Multipurpose Internet Mail
+        Extensions (MIME) Part Two: Media Types", <A =
+href=3D"http://tools.ietf.org/html/rfc2046">RFC 2046</A>, November
+        1996.
+
+<SPAN class=3Dh3><A name=3Dsection-7.2>7.2</A>.  Informative =
+References</SPAN>
+
+   [<A id=3Dref-4 name=3Dref-4>4</A>]  Repici, J., "HOW-TO: The Comma =
+Separated Value (CSV) File
+        Format", 2004,
+        &lt;<A =
+href=3D"http://www.creativyst.com/Doc/Articles/CSV/CSV01.htm">http://www.=
+creativyst.com/Doc/Articles/CSV/CSV01.htm</A>&gt;.
+
+   [<A id=3Dref-5 name=3Dref-5>5</A>]  Edoceo, Inc., "CSV Standard File =
+Format", 2004,
+        &lt;<A =
+href=3D"http://www.edoceo.com/utilis/csv-file-format.php">http://www.edoc=
+eo.com/utilis/csv-file-format.php</A>&gt;.
+
+   [<A id=3Dref-6 name=3Dref-6>6</A>]  Rodger, R. and O. Shanaghy, =
+"Documentation for Ricebridge CSV
+        Manager", February 2005,
+        &lt;<A =
+href=3D"http://www.ricebridge.com/products/csvman/reference.htm">http://w=
+ww.ricebridge.com/products/csvman/reference.htm</A>&gt;.
+
+   [<A id=3Dref-7 name=3Dref-7>7</A>]  Raymond, E., "The Art of Unix =
+Programming, Chapter 5", September
+        2003,
+        &lt;<A =
+href=3D"http://www.catb.org/~esr/writings/taoup/html/ch05s02.html">http:/=
+/www.catb.org/~esr/writings/taoup/html/ch05s02.html</A>&gt;.
+
+   [<A id=3Dref-8 name=3Dref-8>8</A>]  Postel, J., "Transmission Control =
+Protocol", STD 7, <A href=3D"http://tools.ietf.org/html/rfc793">RFC =
+793</A>,
+        September 1981.
+
+
+
+
+<SPAN class=3Dgrey>Shafranovich                 Informational            =
+          [Page 6]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-7 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc4180#page-7" name=3Dpage-7> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc4180">RFC =
+4180</A>       Common Format and MIME Type for CSV Files    October =
+2005</SPAN>
+
+
+Author's Address
+
+   Yakov Shafranovich
+   SolidMatrix Technologies, Inc.
+
+   EMail: ietf@shaftek.org
+   URI:   <A =
+href=3D"http://www.shaftek.org/">http://www.shaftek.org/</A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Shafranovich                 Informational            =
+          [Page 7]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-8 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc4180#page-8" name=3Dpage-8> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc4180">RFC =
+4180</A>       Common Format and MIME Type for CSV Files    October =
+2005</SPAN>
+
+
+Full Copyright Statement
+
+   Copyright (C) The Internet Society (2005).
+
+   This document is subject to the rights, licenses and restrictions
+   contained in <A href=3D"http://tools.ietf.org/html/bcp78">BCP 78</A>, =
+and except as set forth therein, the authors
+   retain all their rights.
+
+   This document and the information contained herein are provided on an
+   "AS IS" basis and THE CONTRIBUTOR, THE ORGANIZATION HE/SHE REPRESENTS
+   OR IS SPONSORED BY (IF ANY), THE INTERNET SOCIETY AND THE INTERNET
+   ENGINEERING TASK FORCE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE
+   INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED
+   WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Intellectual Property
+
+   The IETF takes no position regarding the validity or scope of any
+   Intellectual Property Rights or other rights that might be claimed to
+   pertain to the implementation or use of the technology described in
+   this document or the extent to which any license under such rights
+   might or might not be available; nor does it represent that it has
+   made any independent effort to identify any such rights.  Information
+   on the procedures with respect to rights in RFC documents can be
+   found in <A href=3D"http://tools.ietf.org/html/bcp78">BCP 78</A> and =
+<A href=3D"http://tools.ietf.org/html/bcp79">BCP 79</A>.
+
+   Copies of IPR disclosures made to the IETF Secretariat and any
+   assurances of licenses to be made available, or the result of an
+   attempt made to obtain a general license or permission for the use of
+   such proprietary rights by implementers or users of this
+   specification can be obtained from the IETF on-line IPR repository at
+   <A href=3D"http://www.ietf.org/ipr">http://www.ietf.org/ipr</A>.
+
+   The IETF invites any interested party to bring to its attention any
+   copyrights, patents or patent applications, or other proprietary
+   rights that may cover technology that may be required to implement
+   this standard.  Please address the information to the IETF at ietf-
+   ipr@ietf.org.
+
+Acknowledgement
+
+   Funding for the RFC Editor function is currently provided by the
+   Internet Society.
+
+
+
+
+
+
+
+Shafranovich                 Informational                      [Page 8]
+</PRE><PRE class=3Dnewpage>
+</PRE><BR><SPAN class=3Dnoprint><SMALL><SMALL>Html markup produced by =
+rfcmarkup=20
+1.91, available from <A=20
+href=3D"http://tools.ietf.org/tools/rfcmarkup/">http://tools.ietf.org/too=
+ls/rfcmarkup/</A>=20
+</SMALL></SMALL></SPAN></BODY></HTML>

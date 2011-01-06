@@ -1,0 +1,1221 @@
+From: "Saved by Windows Internet Explorer 8"
+Subject: RFC 2234 - Augmented BNF for Syntax Specifications: ABNF
+Date: Mon, 27 Dec 2010 00:55:56 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://tools.ietf.org/html/rfc2234
+X-MimeOLE: Produced By Microsoft MimeOLE V6.1.7600.16543
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Den xml:lang=3D"en" =
+xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD=20
+profile=3D"http://dublincore.org/documents/2008/08/04/dc-html/"><TITLE>RF=
+C 2234 - Augmented BNF for Syntax Specifications: ABNF</TITLE>
+<META content=3D"text/html; charset=3Dwindows-1252" =
+http-equiv=3DContent-Type>
+<META name=3Drobots content=3Dindex,follow>
+<META name=3Dcreator content=3D"rfcmarkup version 1.91"><LINK =
+rel=3Dschema.DC=20
+href=3D"http://purl.org/dc/elements/1.1/">
+<META name=3DDC.Identifier content=3Durn:ietf:rfc:2234>
+<META name=3DDC.Description.Abstract=20
+content=3D"In the early days of the Arpanet, each specification =
+contained its own\ndefinition of ABNF. This included the email =
+specifications, RFC733 and\nthen RFC822 which have come to be the common =
+citations for defining\nABNF. The current document separates out that =
+definition, to permit\nselective reference. Predictably, it also =
+provides some modifications\nand enhancements. [STANDARDS-TRACK]">
+<META name=3DDC.Creator content=3D"David H. Crocker <dcrocker@imc.org>">
+<META name=3DDC.Date.Issued content=3D"November, 1997">
+<META name=3DDC.Title=20
+content=3D"Augmented BNF for Syntax Specifications: ABNF"><LINK =
+rel=3Dicon=20
+type=3Dimage/png href=3D"/images/rfc.png"><LINK rel=3D"shortcut icon" =
+type=3Dimage/png=20
+href=3D"/images/rfc.png">
+<STYLE type=3Dtext/css>BODY {
+	MARGIN: 0px 8px; FONT-SIZE: 1em
+}
+H1 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H2 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H3 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H4 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H5 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H6 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h1 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h2 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h3 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h4 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h5 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.h6 {
+	LINE-HEIGHT: 0pt; DISPLAY: inline; FONT-FAMILY: monospace; WHITE-SPACE: =
+pre; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; FONT-SIZE: 1em
+}
+.pre {
+	FONT-FAMILY: monospace; WHITE-SPACE: pre
+}
+.header {
+	FONT-WEIGHT: bold
+}
+.newpage {
+	PAGE-BREAK-BEFORE: always
+}
+.invisible {
+	COLOR: white; TEXT-DECORATION: none
+}
+
+@media Print   =20
+{
+BODY {
+	FONT-SIZE: 10.5pt
+}
+H1 {
+	FONT-SIZE: 10.5pt
+}
+H2 {
+	FONT-SIZE: 10.5pt
+}
+H3 {
+	FONT-SIZE: 10.5pt
+}
+H4 {
+	FONT-SIZE: 10.5pt
+}
+H5 {
+	FONT-SIZE: 10.5pt
+}
+H6 {
+	FONT-SIZE: 10.5pt
+}
+A:link {
+	COLOR: inherit; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: inherit; TEXT-DECORATION: none
+}
+.noprint {
+	DISPLAY: none
+}
+
+}
+
+@media Screen   =20
+{
+.grey {
+	COLOR: #777
+}
+.grey A:link {
+	COLOR: #777
+}
+.grey A:visited {
+	COLOR: #777
+}
+.docinfo {
+	BACKGROUND-COLOR: #eee
+}
+.top {
+	BORDER-TOP: #eee 7px solid
+}
+.bgwhite {
+	BACKGROUND-COLOR: white
+}
+.bgred {
+	BACKGROUND-COLOR: #f44
+}
+.bggrey {
+	BACKGROUND-COLOR: #666
+}
+.bgbrown {
+	BACKGROUND-COLOR: #840
+}
+.bgorange {
+	BACKGROUND-COLOR: #fa0
+}
+.bgyellow {
+	BACKGROUND-COLOR: #ee0
+}
+.bgmagenta {
+	BACKGROUND-COLOR: #f4f
+}
+.bgblue {
+	BACKGROUND-COLOR: #66f
+}
+.bgcyan {
+	BACKGROUND-COLOR: #4dd
+}
+.bggreen {
+	BACKGROUND-COLOR: #4f4
+}
+.legend {
+	FONT-SIZE: 90%
+}
+.cplate {
+	BORDER-BOTTOM: grey 1px solid; BORDER-LEFT: grey 1px solid; FONT-SIZE: =
+70%; BORDER-TOP: grey 1px solid; BORDER-RIGHT: grey 1px solid
+}
+
+}
+</STYLE>
+<!--[if IE]>
+<STYLE>BODY {
+	MARGIN: 10px; FONT-SIZE: 13px
+}
+</STYLE>
+<![endif]-->
+<SCRIPT type=3Dtext/javascript><!--=0A=
+    function addHeaderTags() {=0A=
+	var spans =3D document.getElementsByTagName("span");=0A=
+	for (var i=3D0; i < spans.length; i++) {=0A=
+	    var elem =3D spans[i];=0A=
+	    if (elem) {=0A=
+		var level =3D elem.getAttribute("class");=0A=
+                if (level =3D=3D "h1" || level =3D=3D "h2" || level =
+=3D=3D "h3" || level =3D=3D "h4" || level =3D=3D "h5" || level =3D=3D =
+"h6") {=0A=
+                    elem.innerHTML =3D =
+"<"+level+">"+elem.innerHTML+"</"+level+">";		=0A=
+                }=0A=
+	    }=0A=
+	}=0A=
+    }=0A=
+    var legend_html =3D "Colour legend:<br />      <table>         =
+<tr><td>Unknown:</td>          <td><span class=3D'cplate =
+bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Draft:</td>            <td><span class=3D'cplate =
+bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Informational:</td>    <td><span class=3D'cplate =
+bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Experimental:</td>     <td><span class=3D'cplate =
+bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         <tr><td>Best =
+Common Practice:</td><td><span class=3D'cplate =
+bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Proposed Standard:</td><td><span class=3D'cplate =
+bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         <tr><td>Draft =
+Standard:</td>   <td><span class=3D'cplate =
+bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Standard:</td>         <td><span class=3D'cplate =
+bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Historic:</td>         <td><span class=3D'cplate =
+bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>         =
+<tr><td>Obsolete:</td>         <td><span class=3D'cplate =
+bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>     </table>";=0A=
+    function showElem(id) {=0A=
+        var elem =3D document.getElementById(id);=0A=
+        elem.innerHTML =3D eval(id+"_html");=0A=
+        elem.style.visibility=3D'visible';=0A=
+    }=0A=
+    function hideElem(id) {=0A=
+        var elem =3D document.getElementById(id);=0A=
+        elem.style.visibility=3D'hidden';        =0A=
+        elem.innerHTML =3D "";=0A=
+    }=0A=
+    // -->=0A=
+    </SCRIPT>
+
+<META name=3DGENERATOR content=3D"MSHTML 8.00.7600.16700"></HEAD>
+<BODY onload=3DaddHeaderTags()>
+<DIV style=3D"HEIGHT: 13px"><DIV style=3D"POSITION: absolute; HEIGHT: =
+6px" class=3D"pre noprint docinfo bgbrown" =
+onmouseover=3D"this.style.cursor=3D'pointer';" title=3D"Click for colour =
+legend." onmouseout=3D"hideElem('legend')" =
+onclick=3D"showElem('legend');">                                         =
+                               </DIV><DIV style=3D"BORDER-BOTTOM: #345 =
+1px solid; POSITION: absolute; BORDER-LEFT: #345 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: white; PADDING-LEFT: 7px; =
+PADDING-RIGHT: 9px; VISIBILITY: hidden; BORDER-TOP: #345 1px solid; TOP: =
+4px; BORDER-RIGHT: #345 1px solid; PADDING-TOP: 4px; LEFT: 4ex" =
+id=3Dlegend class=3D"docinfo noprint pre legend" =
+onmouseover=3D"showElem('legend');" onmouseout=3D"hideElem('legend');">  =
+    </DIV></DIV><SPAN class=3D"pre noprint docinfo top">[<A =
+title=3D"Document search and retrieval page" =
+href=3D"http://tools.ietf.org/html/">Docs</A>] [<A title=3D"Plaintext =
+version of this document" =
+href=3D"http://tools.ietf.org/rfc/rfc2234.txt">txt</A>|<A title=3D"PDF =
+version of this document" =
+href=3D"http://tools.ietf.org/pdf/rfc2234">pdf</A>] [<A =
+title=3Ddraft-ietf-drums-abnf =
+href=3D"http://tools.ietf.org/html/draft-ietf-drums-abnf">draft-ietf-drum=
+s-...</A>] [<A title=3D"Inline diff (wdiff)" =
+href=3D"http://tools.ietf.org/rfcdiff?difftype=3D--hwdiff&amp;url2=3Drfc2=
+234">Diff1</A>] [<A title=3D"Side-by-side diff" =
+href=3D"http://tools.ietf.org/rfcdiff?url2=3Drfc2234">Diff2</A>] [<A =
+href=3D"http://www.rfc-editor.org/errata_search.php?rfc=3D2234">Errata</A=
+>]        </SPAN><BR><SPAN class=3D"pre noprint docinfo">                =
+                                                        </SPAN><BR><SPAN =
+class=3D"pre noprint docinfo">Obsoleted by: <A =
+href=3D"http://tools.ietf.org/html/rfc4234">4234</A>                     =
+                PROPOSED STANDARD</SPAN><BR><SPAN class=3D"pre noprint =
+docinfo">                                                            =
+<SPAN style=3D"COLOR: #c00">Errata Exist</SPAN></SPAN><BR><PRE>Network =
+Working Group                                     D. Crocker, Ed.
+Request for Comments: 2234                       Internet Mail =
+Consortium
+Category: Standards Track                                      P. =
+Overell
+                                                      Demon Internet =
+Ltd.
+                                                            November =
+1997
+
+
+             <SPAN class=3Dh1>Augmented BNF for Syntax Specifications: =
+ABNF</SPAN>
+
+
+Status of this Memo
+
+   This document specifies an Internet standards track protocol for the
+   Internet community, and requests discussion and suggestions for
+   improvements.  Please refer to the current edition of the "Internet
+   Official Protocol Standards" (STD 1) for the standardization state
+   and status of this protocol.  Distribution of this memo is unlimited.
+
+Copyright Notice
+
+   Copyright (C) The Internet Society (1997).  All Rights Reserved.
+
+TABLE OF CONTENTS
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-1">1</A>. =
+INTRODUCTION ..................................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-2">2</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-2">2</A>. RULE =
+DEFINITION ...............................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-2">2</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-2.1">2.1</A> =
+RULE NAMING ..................................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-2">2</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-2.2">2.2</A> =
+RULE FORM ....................................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-3">3</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-2.3">2.3</A> =
+TERMINAL VALUES ..............................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-3">3</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-2.4">2.4</A> =
+EXTERNAL ENCODINGS ...........................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-5">5</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3">3</A>. =
+OPERATORS .....................................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-5">5</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.1">3.1</A> =
+CONCATENATION    RULE1     RULE2 .............................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-5">5</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.2">3.2</A> =
+ALTERNATIVES RULE1 / RULE2 ...................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-6">6</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.3">3.3</A> =
+INCREMENTAL ALTERNATIVES   RULE1 =3D/ RULE2 ....................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-6">6</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.4">3.4</A> =
+VALUE RANGE ALTERNATIVES   %C##-## ...........................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-7">7</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.5">3.5</A> =
+SEQUENCE GROUP (RULE1 RULE2) .................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-7">7</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.6">3.6</A> =
+VARIABLE REPETITION *RULE ....................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-8">8</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.7">3.7</A> =
+SPECIFIC REPETITION NRULE ....................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-8">8</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.8">3.8</A> =
+OPTIONAL SEQUENCE [RULE] .....................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-8">8</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.9">3.9</A> ; =
+COMMENT ....................................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-8">8</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-3.10">3.10</A> =
+OPERATOR PRECEDENCE .........................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-9">9</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-4">4</A>. ABNF =
+DEFINITION OF ABNF .......................................  <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-9">9</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-5">5</A>. =
+SECURITY CONSIDERATIONS ....................................... <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-10">10</A>
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 1]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-2 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-2" name=3Dpage-2> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-6">6</A>. =
+APPENDIX A - CORE ............................................. <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-11">11</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-6.1">6.1</A> =
+CORE RULES ................................................... <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-11">11</A>
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-6.2">6.2</A> =
+COMMON ENCODING .............................................. <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-12">12</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-7">7</A>. =
+ACKNOWLEDGMENTS ............................................... <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-12">12</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-8">8</A>. =
+REFERENCES .................................................... <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-13">13</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-9">9</A>. =
+CONTACT ....................................................... <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-13">13</A>
+
+   <A href=3D"http://tools.ietf.org/html/rfc2234#section-10">10</A>. =
+FULL COPYRIGHT STATEMENT ..................................... <A =
+href=3D"http://tools.ietf.org/html/rfc2234#page-14">14</A>
+
+<SPAN class=3Dh2><A name=3Dsection-1>1</A>.   INTRODUCTION</SPAN>
+
+   Internet technical specifications often need to define a format
+   syntax and are free to employ whatever notation their authors deem
+   useful.  Over the years, a modified version of Backus-Naur Form
+   (BNF), called Augmented BNF (ABNF), has been popular among many
+   Internet specifications.  It balances compactness and simplicity,
+   with reasonable representational power.  In the early days of the
+   Arpanet, each specification contained its own definition of ABNF.
+   This included the email specifications, <A =
+href=3D"http://tools.ietf.org/html/rfc733">RFC733</A> and then <A =
+href=3D"http://tools.ietf.org/html/rfc822">RFC822</A> which
+   have come to be the common citations for defining ABNF.  The current
+   document separates out that definition, to permit selective
+   reference.  Predictably, it also provides some modifications and
+   enhancements.
+
+   The differences between standard BNF and ABNF involve naming rules,
+   repetition, alternatives, order-independence, and value ranges.
+   <A href=3D"http://tools.ietf.org/html/rfc2234#appendix-A">Appendix =
+A</A> (Core) supplies rule definitions and encoding for a core
+   lexical analyzer of the type common to several Internet
+   specifications.  It is provided as a convenience and is otherwise
+   separate from the meta language defined in the body of this document,
+   and separate from its formal status.
+
+<SPAN class=3Dh2><A name=3Dsection-2>2</A>.   RULE DEFINITION</SPAN>
+
+<SPAN class=3Dh3><A name=3Dsection-2.1>2.1</A>  Rule Naming</SPAN>
+
+   The name of a rule is simply the name itself; that is, a sequence of
+   characters, beginning with  an alphabetic character, and followed by
+   a combination of alphabetics, digits and hyphens (dashes).
+
+        NOTE:     Rule names are case-insensitive
+
+   The names &lt;rulename&gt;, &lt;Rulename&gt;, &lt;RULENAME&gt; and =
+&lt;rUlENamE&gt; all refer
+   to the same rule.
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 2]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-3 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-3" name=3Dpage-3> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+   Unlike original BNF, angle brackets ("&lt;", "&gt;") are not  =
+required.
+   However, angle brackets may be used around a rule name whenever their
+   presence will facilitate discerning the use of  a rule name.  This is
+   typically restricted to rule name references in free-form prose, or
+   to distinguish partial rules that combine into a string not separated
+   by white space, such as shown in the discussion about repetition,
+   below.
+
+<SPAN class=3Dh3><A name=3Dsection-2.2>2.2</A>  Rule Form</SPAN>
+
+   A rule is defined by the following sequence:
+
+        name =3D  elements crlf
+
+   where &lt;name&gt; is the name of the rule, &lt;elements&gt; is one =
+or more rule
+   names or terminal specifications and &lt;crlf&gt; is the end-of- line
+   indicator, carriage return followed by line feed.  The equal sign
+   separates the name from the definition of the rule.  The elements
+   form a sequence of one or more rule names and/or value definitions,
+   combined according to the various operators, defined in this
+   document, such as alternative and repetition.
+
+   For visual ease, rule definitions are left aligned.  When a rule
+   requires multiple lines, the continuation lines are indented.  The
+   left alignment and indentation are relative to the first lines of the
+   ABNF rules and need not match the left margin of the document.
+
+<SPAN class=3Dh3><A name=3Dsection-2.3>2.3</A>  Terminal Values</SPAN>
+
+   Rules resolve into a string of terminal values, sometimes called
+   characters.  In ABNF a character is merely a non-negative integer.
+   In certain contexts a specific mapping (encoding) of values into a
+   character set (such as ASCII) will be specified.
+
+   Terminals are specified by one or more numeric characters with the
+   base interpretation of those characters indicated explicitly.  The
+   following bases are currently defined:
+
+        b           =3D  binary
+
+        d           =3D  decimal
+
+        x           =3D  hexadecimal
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 3]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-4 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-4" name=3Dpage-4> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+   Hence:
+
+        CR          =3D  %d13
+
+        CR          =3D  %x0D
+
+   respectively specify the decimal and hexadecimal representation of
+   [<A title=3D'"Standard for the Format of ARPA Network Text Message,"' =
+href=3D"http://tools.ietf.org/html/rfc2234#ref-US-ASCII">US-ASCII</A>] =
+for carriage return.
+
+   A concatenated string of such values is specified compactly, using a
+   period (".") to indicate separation of characters within that value.
+   Hence:
+
+        CRLF        =3D  %d13.10
+
+   ABNF permits specifying literal text string directly, enclosed in
+   quotation-marks.  Hence:
+
+        command     =3D  "command string"
+
+   Literal text strings are interpreted as a concatenated set of
+   printable characters.
+
+        NOTE:     ABNF strings are case-insensitive and
+                  the character set for these strings is us-ascii.
+
+   Hence:
+
+        rulename =3D "abc"
+
+   and:
+
+        rulename =3D "aBc"
+
+   will match "abc", "Abc", "aBc", "abC", "ABc", "aBC", "AbC" and "ABC".
+
+                To specify a rule which IS case SENSITIVE,
+                   specify the characters individually.
+
+   For example:
+
+        rulename    =3D  %d97 %d98 %d99
+
+   or
+
+        rulename    =3D  %d97.98.99
+
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 4]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-5 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-5" name=3Dpage-5> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+   will match only the string which comprises only lowercased
+   characters, abc.
+
+<SPAN class=3Dh3><A name=3Dsection-2.4>2.4</A>  External =
+Encodings</SPAN>
+
+   External representations of terminal value characters will vary
+   according to constraints in the storage or transmission environment.
+   Hence, the same ABNF-based grammar may have multiple external
+   encodings, such as one for a 7-bit US-ASCII environment, another for
+   a binary octet environment and still a different one when 16-bit
+   Unicode is used.  Encoding details are beyond the scope of ABNF,
+   although <A =
+href=3D"http://tools.ietf.org/html/rfc2234#appendix-A">Appendix A</A> =
+(Core) provides definitions for a 7-bit US-ASCII
+   environment as has been common to much of the Internet.
+
+   By separating external encoding from the syntax, it is intended that
+   alternate encoding environments can be used for the same syntax.
+
+<SPAN class=3Dh2><A name=3Dsection-3>3</A>.   OPERATORS</SPAN>
+
+<SPAN class=3Dh3><A name=3Dsection-3.1>3.1</A>  Concatenation            =
+                      Rule1 Rule2</SPAN>
+
+   A rule can define a simple, ordered string of values -- i.e., a
+   concatenation of contiguous characters -- by listing a sequence of
+   rule names.  For example:
+
+        foo         =3D  %x61           ; a
+
+        bar         =3D  %x62           ; b
+
+        mumble      =3D  foo bar foo
+
+        So that the rule &lt;mumble&gt; matches the lowercase string =
+"aba".
+
+        LINEAR WHITE SPACE:  Concatenation is at the core of the ABNF
+        parsing model.  A string of contiguous characters (values) is
+        parsed according to the rules defined in ABNF.  For Internet
+        specifications, there is some history of permitting linear white
+        space (space and horizontal tab) to be freelyPand
+        implicitlyPinterspersed around major constructs, such as
+        delimiting special characters or atomic strings.
+
+        NOTE:     This specification for ABNF does not
+                  provide for implicit specification of linear white
+                  space.
+
+   Any grammar which wishes to permit linear white space around
+   delimiters or string segments must specify it explicitly.  It is
+   often useful to provide for such white space in "core" rules that are
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 5]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-6 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-6" name=3Dpage-6> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+   then used variously among higher-level rules.  The "core" rules might
+   be formed into a lexical analyzer or simply be part of the main
+   ruleset.
+
+<SPAN class=3Dh3><A name=3Dsection-3.2>3.2</A>  Alternatives             =
+                  Rule1 / Rule2</SPAN>
+
+   Elements separated by forward slash ("/") are alternatives.
+   Therefore,
+
+        foo / bar
+
+   will accept &lt;foo&gt; or &lt;bar&gt;.
+
+        NOTE:     A quoted string containing alphabetic
+                  characters is special form for specifying alternative
+                  characters and is interpreted as a non-terminal
+                  representing the set of combinatorial strings with the
+                  contained characters, in the specified order but with
+                  any mixture of upper and lower case..
+
+<SPAN class=3Dh3><A name=3Dsection-3.3>3.3</A>  Incremental Alternatives =
+                   Rule1 =3D/ Rule2</SPAN>
+
+   It is sometimes convenient to specify a list of alternatives in
+   fragments.  That is, an initial rule may match one or more
+   alternatives, with later rule definitions adding to the set of
+   alternatives.  This is particularly useful for otherwise- independent
+   specifications which derive from the same parent rule set, such as
+   often occurs with parameter lists.  ABNF permits this incremental
+   definition through the construct:
+
+        oldrule     =3D/ additional-alternatives
+
+   So that the rule set
+
+        ruleset     =3D  alt1 / alt2
+
+        ruleset     =3D/ alt3
+
+        ruleset     =3D/ alt4 / alt5
+
+   is the same as specifying
+
+        ruleset     =3D  alt1 / alt2 / alt3 / alt4 / alt5
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 6]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-7 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-7" name=3Dpage-7> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+<SPAN class=3Dh3><A name=3Dsection-3.4>3.4</A>  Value Range Alternatives =
+                          %c##-##</SPAN>
+
+   A range of alternative numeric values can be specified compactly,
+   using dash ("-") to indicate the range of alternative values.  Hence:
+
+        DIGIT       =3D  %x30-39
+
+   is equivalent to:
+
+        DIGIT       =3D  "0" / "1" / "2" / "3" / "4" / "5" / "6" /
+
+                           "7" / "8" / "9"
+
+   Concatenated numeric values and numeric value ranges can not be
+   specified in the same string.  A numeric value may use the dotted
+   notation for concatenation or it may use the dash notation to specify
+   one value range.  Hence, to specify one printable character, between
+   end of line sequences, the specification could be:
+
+        char-line =3D %x0D.0A %x20-7E %x0D.0A
+
+<SPAN class=3Dh3><A name=3Dsection-3.5>3.5</A>  Sequence Group           =
+                  (Rule1 Rule2)</SPAN>
+
+   Elements enclosed in parentheses are treated as a single element,
+   whose contents are STRICTLY ORDERED.   Thus,
+
+        elem (foo / bar) blat
+
+   which matches (elem foo blat) or (elem bar blat).
+
+        elem foo / bar blat
+
+   matches (elem foo) or (bar blat).
+
+        NOTE:     It is strongly advised to use grouping
+                  notation, rather than to rely on proper reading of
+                  "bare" alternations, when alternatives consist of
+                  multiple rule names or literals.
+
+   Hence it is recommended that instead of the above form, the form:
+
+        (elem foo) / (bar blat)
+
+   be used.  It will avoid misinterpretation by casual readers.
+
+   The sequence group notation is also used within free text to set off
+   an element sequence from the prose.
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 7]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-8 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-8" name=3Dpage-8> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+<SPAN class=3Dh3><A name=3Dsection-3.6>3.6</A>  Variable Repetition      =
+                          *Rule</SPAN>
+
+   The operator "*" preceding an element indicates repetition. The full
+   form is:
+
+        &lt;a&gt;*&lt;b&gt;element
+
+   where &lt;a&gt; and &lt;b&gt; are optional decimal values, indicating =
+at least
+   &lt;a&gt; and at most &lt;b&gt; occurrences of element.
+
+   Default values are 0 and infinity so that *&lt;element&gt; allows any
+   number, including zero; 1*&lt;element&gt; requires at  least  one;
+   3*3&lt;element&gt; allows exactly 3 and 1*2&lt;element&gt; allows one =
+or two.
+
+<SPAN class=3Dh3><A name=3Dsection-3.7>3.7</A>  Specific Repetition      =
+                            nRule</SPAN>
+
+   A rule of the form:
+
+        &lt;n&gt;element
+
+   is equivalent to
+
+        &lt;n&gt;*&lt;n&gt;element
+
+   That is, exactly  &lt;N&gt;  occurrences  of &lt;element&gt;. Thus =
+2DIGIT is a
+   2-digit number, and 3ALPHA is a string of three alphabetic
+   characters.
+
+<SPAN class=3Dh3><A name=3Dsection-3.8>3.8</A>  Optional Sequence        =
+                           [RULE]</SPAN>
+
+   Square brackets enclose an optional element sequence:
+
+        [foo bar]
+
+   is equivalent to
+
+        *1(foo bar).
+
+<SPAN class=3Dh3><A name=3Dsection-3.9>3.9</A>  ; Comment</SPAN>
+
+   A semi-colon starts a comment that continues to the end of line.
+   This is a simple way of including useful notes in parallel with the
+   specifications.
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 8]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-9 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-9" name=3Dpage-9> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+<SPAN class=3Dh3><A name=3Dsection-3.10>3.10</A> Operator =
+Precedence</SPAN>
+
+   The various mechanisms described above have the following precedence,
+   from highest (binding tightest) at the top, to lowest and loosest at
+   the bottom:
+
+        Strings, Names formation
+        Comment
+        Value range
+        Repetition
+        Grouping, Optional
+        Concatenation
+        Alternative
+
+   Use of the alternative operator, freely mixed with concatenations can
+   be confusing.
+
+        Again, it is recommended that the grouping operator be used to
+        make explicit concatenation groups.
+
+<SPAN class=3Dh2><A name=3Dsection-4>4</A>.   ABNF DEFINITION OF =
+ABNF</SPAN>
+
+   This syntax uses the rules provided in <A =
+href=3D"http://tools.ietf.org/html/rfc2234#appendix-A">Appendix A</A> =
+(Core).
+
+        rulelist       =3D  1*( rule / (*c-wsp c-nl) )
+
+        rule           =3D  rulename defined-as elements c-nl
+                               ; continues if next line starts
+                               ;  with white space
+
+        rulename       =3D  ALPHA *(ALPHA / DIGIT / "-")
+
+        defined-as     =3D  *c-wsp ("=3D" / "=3D/") *c-wsp
+                               ; basic rules definition and
+                               ;  incremental alternatives
+
+        elements       =3D  alternation *c-wsp
+
+        c-wsp          =3D  WSP / (c-nl WSP)
+
+        c-nl           =3D  comment / CRLF
+                               ; comment or newline
+
+        comment        =3D  ";" *(WSP / VCHAR) CRLF
+
+        alternation    =3D  concatenation
+                          *(*c-wsp "/" *c-wsp concatenation)
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+              [Page 9]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-10 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-10" name=3Dpage-10> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+        concatenation  =3D  repetition *(1*c-wsp repetition)
+
+        repetition     =3D  [repeat] element
+
+        repeat         =3D  1*DIGIT / (*DIGIT "*" *DIGIT)
+
+        element        =3D  rulename / group / option /
+                          char-val / num-val / prose-val
+
+        group          =3D  "(" *c-wsp alternation *c-wsp ")"
+
+        option         =3D  "[" *c-wsp alternation *c-wsp "]"
+
+        char-val       =3D  DQUOTE *(%x20-21 / %x23-7E) DQUOTE
+                               ; quoted string of SP and VCHAR
+                                  without DQUOTE
+
+        num-val        =3D  "%" (bin-val / dec-val / hex-val)
+
+        bin-val        =3D  "b" 1*BIT
+                          [ 1*("." 1*BIT) / ("-" 1*BIT) ]
+                               ; series of concatenated bit values
+                               ; or single ONEOF range
+
+        dec-val        =3D  "d" 1*DIGIT
+                          [ 1*("." 1*DIGIT) / ("-" 1*DIGIT) ]
+
+        hex-val        =3D  "x" 1*HEXDIG
+                          [ 1*("." 1*HEXDIG) / ("-" 1*HEXDIG) ]
+
+        prose-val      =3D  "&lt;" *(%x20-3D / %x3F-7E) "&gt;"
+                               ; bracketed string of SP and VCHAR
+                                  without angles
+                               ; prose description, to be used as
+                                  last resort
+
+
+<SPAN class=3Dh2><A name=3Dsection-5>5</A>.   SECURITY =
+CONSIDERATIONS</SPAN>
+
+   Security is truly believed to be irrelevant to this document.
+
+
+
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+             [Page 10]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-11 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-11" name=3Dpage-11> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+<SPAN class=3Dh2><A name=3Dsection-6>6</A>.   APPENDIX A - CORE</SPAN>
+
+   This Appendix is provided as a convenient core for specific grammars.
+   The definitions may be used as a core set of rules.
+
+<SPAN class=3Dh3><A name=3Dsection-6.1>6.1</A>  Core Rules</SPAN>
+
+   Certain  basic  rules  are  in uppercase, such as SP, HTAB, CRLF,
+   DIGIT, ALPHA, etc.
+
+        ALPHA          =3D  %x41-5A / %x61-7A   ; A-Z / a-z
+
+        BIT            =3D  "0" / "1"
+
+        CHAR           =3D  %x01-7F
+                               ; any 7-bit US-ASCII character,
+                                  excluding NUL
+
+        CR             =3D  %x0D
+                               ; carriage return
+
+        CRLF           =3D  CR LF
+                               ; Internet standard newline
+
+        CTL            =3D  %x00-1F / %x7F
+                               ; controls
+
+        DIGIT          =3D  %x30-39
+                               ; 0-9
+
+        DQUOTE         =3D  %x22
+                               ; " (Double Quote)
+
+        HEXDIG         =3D  DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
+
+        HTAB           =3D  %x09
+                               ; horizontal tab
+
+        LF             =3D  %x0A
+                               ; linefeed
+
+        LWSP           =3D  *(WSP / CRLF WSP)
+                               ; linear white space (past newline)
+
+        OCTET          =3D  %x00-FF
+                               ; 8 bits of data
+
+        SP             =3D  %x20
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+             [Page 11]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-12 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-12" name=3Dpage-12> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+                               ; space
+
+        VCHAR          =3D  %x21-7E
+                               ; visible (printing) characters
+
+        WSP            =3D  SP / HTAB
+                               ; white space
+
+<SPAN class=3Dh3><A name=3Dsection-6.2>6.2</A>  Common Encoding</SPAN>
+
+   Externally, data are represented as "network virtual ASCII", namely
+   7-bit US-ASCII in an 8-bit field, with the high (8th) bit set to
+   zero.  A string of values is in "network byte order" with the
+   higher-valued bytes represented on the left-hand side and being sent
+   over the network first.
+
+<SPAN class=3Dh2><A name=3Dsection-7>7</A>.   ACKNOWLEDGMENTS</SPAN>
+
+   The syntax for ABNF was originally specified in <A =
+href=3D"http://tools.ietf.org/html/rfc733">RFC 733</A>.  Ken L.
+   Harrenstien, of SRI International, was responsible for re-coding the
+   BNF into an augmented BNF that makes the representation smaller and
+   easier to understand.
+
+   This recent project began as a simple effort to cull out the portion
+   of <A href=3D"http://tools.ietf.org/html/rfc822">RFC 822</A> which =
+has been repeatedly cited by non-email specification
+   writers, namely the description of augmented BNF.  Rather than simply
+   and blindly converting the existing text into a separate document,
+   the working group chose to give careful consideration to the
+   deficiencies, as well as benefits, of the existing specification and
+   related specifications available over the last 15 years and therefore
+   to pursue enhancement.  This turned the project into something rather
+   more ambitious than first intended.  Interestingly the result is not
+   massively different from that original, although decisions such as
+   removing the list notation came as a surprise.
+
+   The current round of specification was part of the DRUMS working
+   group, with significant contributions from Jerome Abela , Harald
+   Alvestrand, Robert Elz, Roger Fajman, Aviva Garrett, Tom Harsch, Dan
+   Kohn, Bill McQuillan, Keith Moore, Chris Newman , Pete Resnick and
+   Henning Schulzrinne.
+
+
+
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+             [Page 12]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-13 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-13" name=3Dpage-13> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+<SPAN class=3Dh2><A name=3Dsection-8>8</A>.   REFERENCES</SPAN>
+
+   [<A id=3Dref-US-ASCII name=3Dref-US-ASCII>US-ASCII</A>]     Coded =
+Character Set--7-Bit American Standard Code for
+   Information Interchange, ANSI X3.4-1986.
+
+   [<A id=3Dref-RFC733 name=3Dref-RFC733>RFC733</A>]  Crocker, D., =
+Vittal, J., Pogran, K., and D. Henderson,
+   "Standard for the Format of ARPA Network Text Message," <A =
+href=3D"http://tools.ietf.org/html/rfc733">RFC 733</A>,
+   November 1977.
+
+   [<A id=3Dref-RFC822 name=3Dref-RFC822>RFC822</A>]  Crocker, D., =
+"Standard for the Format of ARPA Internet Text
+   Messages", STD 11, <A href=3D"http://tools.ietf.org/html/rfc822">RFC =
+822</A>, August 1982.
+
+<SPAN class=3Dh2><A name=3Dsection-9>9</A>.   CONTACT</SPAN>
+
+   David H. Crocker                 Paul Overell
+
+   Internet Mail Consortium         Demon Internet Ltd
+   675 Spruce Dr.                   Dorking Business Park
+   Sunnyvale, CA 94086 USA          Dorking
+                                    Surrey, RH4 1HN
+                                    UK
+
+   Phone:    +1 408 246 8253
+   Fax:      +1 408 249 6205
+   EMail:    dcrocker@imc.org       paulo@turnpike.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<SPAN class=3Dgrey>Crocker &amp; Overell           Standards Track       =
+             [Page 13]</SPAN>
+</PRE><PRE class=3Dnewpage><A id=3Dpage-14 class=3Dinvisible =
+href=3D"http://tools.ietf.org/html/rfc2234#page-14" name=3Dpage-14> </A>
+<SPAN class=3Dgrey><A href=3D"http://tools.ietf.org/html/rfc2234">RFC =
+2234</A>             ABNF for Syntax Specifications        November =
+1997</SPAN>
+
+
+<SPAN class=3Dh2><A name=3Dsection-10>10</A>.  Full Copyright =
+Statement</SPAN>
+
+   Copyright (C) The Internet Society (1997).  All Rights Reserved.
+
+   This document and translations of it may be copied and furnished to
+   others, and derivative works that comment on or otherwise explain it
+   or assist in its implementation may be prepared, copied, published
+   and distributed, in whole or in part, without restriction of any
+   kind, provided that the above copyright notice and this paragraph are
+   included on all such copies and derivative works.  However, this
+   document itself may not be modified in any way, such as by removing
+   the copyright notice or references to the Internet Society or other
+   Internet organizations, except as needed for the purpose of
+   developing Internet standards in which case the procedures for
+   copyrights defined in the Internet Standards process must be
+   followed, or as required to translate it into languages other than
+   English.
+
+   The limited permissions granted above are perpetual and will not be
+   revoked by the Internet Society or its successors or assigns.
+
+   This document and the information contained herein is provided on an
+   "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
+   TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+   BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
+   HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crocker &amp; Overell           Standards Track                    [Page =
+14]
+</PRE><PRE class=3Dnewpage>
+</PRE><BR><SPAN class=3Dnoprint><SMALL><SMALL>Html markup produced by =
+rfcmarkup=20
+1.91, available from <A=20
+href=3D"http://tools.ietf.org/tools/rfcmarkup/">http://tools.ietf.org/too=
+ls/rfcmarkup/</A>=20
+</SMALL></SMALL></SPAN></BODY></HTML>
