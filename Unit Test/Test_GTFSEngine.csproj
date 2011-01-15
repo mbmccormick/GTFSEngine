@@ -43,9 +43,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -55,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnicodeCharEnumerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TestData\Caltrain\agency.txt" />
@@ -99,6 +97,16 @@
     <Content Include="TestData\Seattle\stops.txt" />
     <Content Include="TestData\Seattle\stop_times.txt" />
     <Content Include="TestData\Seattle\trips.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ximura\Ximura\Ximura %28Silverlight 4%29.csproj">
+      <Project>{28E2E204-A156-42E5-BE9A-6A518B4C9694}</Project>
+      <Name>Ximura %28Silverlight 4%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTFSEngine.csproj">
+      <Project>{9A0F9BD2-2E4B-4B64-B2CD-DCC693C1DCA4}</Project>
+      <Name>GTFSEngine %28GTFSEngine\GTFSEngine%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

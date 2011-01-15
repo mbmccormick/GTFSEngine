@@ -21,6 +21,7 @@ using Microsoft.Phone;
 using Stancer.GTFSEngine.Entities;
 
 using Ximura;
+using System.Text;
 #endregion  
 namespace Stancer.GTFSEngine
 {
@@ -58,7 +59,7 @@ namespace Stancer.GTFSEngine
             {
                 using (Stream data = hd.GetStream())
                 {
-                    CSVStreamEnumerator<T> item = new CSVStreamEnumerator<T>(data, true, conv);
+                    CSVStreamEnumerator<T> item = new CSVStreamEnumerator<T>(data, true, Encoding.UTF8, conv);
                     foreach (var entity in item)
                         yield return entity;
                 }
