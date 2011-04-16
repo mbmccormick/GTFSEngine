@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{95F54596-0CB3-4FFF-A910-6D36812DBE5A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{084E02AA-8C87-4165-A346-A70DF2054C87}"
-	ProjectSection(SolutionItems) = preProject
-		Caltrain 511.vsmdi = Caltrain 511.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ximura (Silverlight 4)", "..\Ximura\Ximura\Ximura (Silverlight 4).csproj", "{28E2E204-A156-42E5-BE9A-6A518B4C9694}"
 EndProject
@@ -19,8 +14,21 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ximura", "Ximura", "{BDF6F3AD-47FA-46B9-845E-BB58FA7E7754}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Caltrain 511.vsmdi
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://pc-e1whome:8080/tfs/ximura
+		SccProjectUniqueName0 = ..\\Ximura\\Ximura\\Ximura\u0020(Silverlight\u00204).csproj
+		SccProjectTopLevelParentUniqueName0 = GTFSEngine.sln
+		SccProjectName0 = ../../Ximura/Ximura/Ximura
+		SccLocalPath0 = ..\\Ximura\\Ximura
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = GTFSEngine.csproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = Unit\u0020Test\\Test_GTFSEngine.csproj
+		SccProjectTopLevelParentUniqueName3 = GTFSEngine.sln
+		SccProjectName3 = Unit\u0020Test
+		SccLocalPath3 = Unit\u0020Test
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

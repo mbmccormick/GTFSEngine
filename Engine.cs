@@ -55,15 +55,15 @@ namespace Stancer.GTFSEngine
             if (!HasTransitData(tType))
                 yield break;
 
-            foreach (ISourceData hd in mData[tType].Values)
-            {
-                using (Stream data = hd.GetStream())
-                {
-                    CSVStreamEnumerator<T> item = new CSVStreamEnumerator<T>(data, true, Encoding.UTF8, conv);
-                    foreach (var entity in item)
-                        yield return entity;
-                }
-            }
+            //foreach (ISourceData hd in mData[tType].Values)
+            //{
+            //    using (Stream data = hd.GetStream())
+            //    {
+            //        CSVStreamEnumerator<T> item = new CSVStreamEnumerator<T>(data, true, Encoding.UTF8, conv);
+            //        foreach (var entity in item)
+            //            yield return entity;
+            //    }
+            //}
         }
         #endregion  
     }
