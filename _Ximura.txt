@@ -1,0 +1,12 @@
+﻿Ximura: http://ximura.googlecode.com/
+
+
+Please create a folder in the code directory called Ximura and check out the source from the following location.
+
+SVN: http://ximura.googlecode.com/svn/trunk/
+
+To compile successfully, the structure should be as follows:
+
+Root Folder
+	-- GTFSEngine
+	-- Ximura

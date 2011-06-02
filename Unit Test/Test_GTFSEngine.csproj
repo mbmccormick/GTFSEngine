@@ -80,6 +80,15 @@
     <EmbeddedResource Include="TestData\Caltrain\stops.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestData\New York\agency.txt" />
+    <Content Include="TestData\New York\calendar.txt" />
+    <Content Include="TestData\New York\calendar_dates.txt" />
+    <Content Include="TestData\New York\routes.txt" />
+    <Content Include="TestData\New York\shapes.txt" />
+    <Content Include="TestData\New York\stops.txt" />
+    <Content Include="TestData\New York\stop_times.txt" />
+    <Content Include="TestData\New York\transfers.txt" />
+    <Content Include="TestData\New York\trips.txt" />
     <Content Include="TestData\Seattle\agency.txt" />
     <Content Include="TestData\Seattle\calendar.txt" />
     <Content Include="TestData\Seattle\calendar_dates.txt" />

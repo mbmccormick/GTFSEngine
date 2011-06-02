@@ -37,7 +37,7 @@ namespace Stancer.GTFSEngine
             /// <summary>
             /// This is the default constructor.
             /// </summary>
-            /// <param name="type"></param>
+            /// <param name="ass"></param>
             /// <param name="resourceID"></param>
             public AssemblySourceData(Assembly ass, string resourceID)
             {
