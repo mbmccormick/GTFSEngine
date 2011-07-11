@@ -3,41 +3,55 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
+    <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E3B62AD1-8FB9-4930-A9BE-ED4A71E68045}</ProjectGuid>
+    <ProjectGuid>{9A0F9BD2-2E4B-4B64-B2CD-DCC693C1DCA4}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GTFSEngine2</RootNamespace>
-    <AssemblyName>GTFSEngine2</AssemblyName>
+    <RootNamespace>Stancer.GTFSEngine</RootNamespace>
+    <AssemblyName>GTFSEngine</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>%24/GTFSEngine/GTFSEngine</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://pc-e1whome:8080/tfs/ximura</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="Microsoft.Devices.Sensors" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine.cs" />
@@ -50,12 +64,12 @@
     <Compile Include="Entities\Enumerations\CalendarExceptionType.cs" />
     <Compile Include="Entities\Enumerations\DirectionType.cs" />
     <Compile Include="Entities\Enumerations\DropOffType.cs" />
+    <Compile Include="Entities\Enumerations\TransitFileType.cs" />
     <Compile Include="Entities\Enumerations\LocationType.cs" />
     <Compile Include="Entities\Enumerations\PaymentMethodType.cs" />
     <Compile Include="Entities\Enumerations\PickUpType.cs" />
     <Compile Include="Entities\Enumerations\RouteType.cs" />
     <Compile Include="Entities\Enumerations\TransferType.cs" />
-    <Compile Include="Entities\Enumerations\TransitFileType.cs" />
     <Compile Include="Entities\FareAttribute.cs" />
     <Compile Include="Entities\FareRule.cs" />
     <Compile Include="Entities\Frequency.cs" />
@@ -75,12 +89,17 @@
     <None Include="_Documentation\RFC 4180 - Common Format and MIME Type for Comma-Separated Values %28CSV%29 Files.mht" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ximura\Ximura\Ximura %284.0%29.csproj">
-      <Project>{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}</Project>
-      <Name>Ximura %284.0%29</Name>
+    <ProjectReference Include="..\Ximura\Ximura\Ximura %28Silverlight 4%29.csproj">
+      <Project>{28E2E204-A156-42E5-BE9A-6A518B4C9694}</Project>
+      <Name>Ximura %28Silverlight 4%29</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="_Ximura.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

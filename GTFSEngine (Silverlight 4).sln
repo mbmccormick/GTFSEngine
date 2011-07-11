@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ximura (Silverlight 4)", "..\Ximura\Ximura\Ximura (Silverlight 4).csproj", "{28E2E204-A156-42E5-BE9A-6A518B4C9694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTFSEngine (Silverlight 4)", "GTFSEngine (Silverlight 4).csproj", "{9A0F9BD2-2E4B-4B64-B2CD-DCC693C1DCA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ximura", "Ximura", "{BDF6F3AD-47FA-46B9-845E-BB58FA7E7754}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://pc-e1whome:8080/tfs/ximura
+		SccProjectUniqueName0 = ..\\Ximura\\Ximura\\Ximura\u0020(Silverlight\u00204).csproj
+		SccProjectTopLevelParentUniqueName0 = GTFSEngine.sln
+		SccProjectName0 = ../../Ximura/Ximura/Ximura
+		SccLocalPath0 = ..\\Ximura\\Ximura
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = GTFSEngine.csproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = Unit\u0020Test\\Test_GTFSEngine.csproj
+		SccProjectTopLevelParentUniqueName3 = GTFSEngine.sln
+		SccProjectName3 = Unit\u0020Test
+		SccLocalPath3 = Unit\u0020Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28E2E204-A156-42E5-BE9A-6A518B4C9694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E2E204-A156-42E5-BE9A-6A518B4C9694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E2E204-A156-42E5-BE9A-6A518B4C9694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E2E204-A156-42E5-BE9A-6A518B4C9694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0F9BD2-2E4B-4B64-B2CD-DCC693C1DCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0F9BD2-2E4B-4B64-B2CD-DCC693C1DCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0F9BD2-2E4B-4B64-B2CD-DCC693C1DCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0F9BD2-2E4B-4B64-B2CD-DCC693C1DCA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28E2E204-A156-42E5-BE9A-6A518B4C9694} = {BDF6F3AD-47FA-46B9-845E-BB58FA7E7754}
+	EndGlobalSection
+EndGlobal

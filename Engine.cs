@@ -15,13 +15,11 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Devices.Sensors;
-using Microsoft.Phone;
+using System.Text;
 
 using Stancer.GTFSEngine.Entities;
 
 using Ximura;
-using System.Text;
 #endregion  
 namespace Stancer.GTFSEngine
 {
@@ -55,15 +53,20 @@ namespace Stancer.GTFSEngine
             if (!HasTransitData(tType))
                 yield break;
 
-            //foreach (ISourceData hd in mData[tType].Values)
-            //{
-            //    using (Stream data = hd.GetStream())
-            //    {
-            //        CSVStreamEnumerator<T> item = new CSVStreamEnumerator<T>(data, true, Encoding.UTF8, conv);
-            //        foreach (var entity in item)
-            //            yield return entity;
-            //    }
-            //}
+            foreach (ISourceData hd in mData[tType].Values)
+            {
+                using (Stream data = hd.GetStream())
+                {
+                    if (data == null)
+                        throw new ArgumentNullException();
+
+                    CSVStreamOptions opts = new CSVStreamOptions(Encoding.UTF8, ',', true, false, null, null);
+
+                    CSVStreamEnumerator<T> item = new CSVStreamEnumerator<T>(data, conv, opts);
+                    foreach (var entity in item)
+                        yield return entity;
+                }
+            }
         }
         #endregion  
     }

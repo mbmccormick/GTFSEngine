@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ximura;
 #endregion 
 namespace Stancer.GTFSEngine.Entities
 {
@@ -63,6 +64,33 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Constructor
+        public Transfer(CSVRowItem item)
+        {
+            //from_stop_id,to_stop_id,transfer_type,min_transfer_time
+
+            mFromStopID = item["from_stop_id"];
+            mToStopID = item["to_stop_id"];
+
+            switch (item["transfer_type"])
+            {
+                case "0":
+                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
+                    break;
+                case "1":
+                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
+                    break;
+                case "2":
+                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
+                    break;
+                case "3":
+                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("transfer_type",item["transfer_type"]);
+            }
+
+            mMinTransferTime = int.Parse(item["min_transfer_time"]); 
+        }
         /// <summary>
         /// This is the default constructor.
         /// </summary>

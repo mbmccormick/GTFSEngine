@@ -15,8 +15,6 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Devices.Sensors;
-using Microsoft.Phone;
 
 using Stancer.GTFSEngine.Entities;
 
@@ -131,8 +129,27 @@ namespace Stancer.GTFSEngine
 
         private CalendarDate CSVRowItemToCalendarDate(CSVRowItem item)
         {
-            return new CalendarDate();
+            return new CalendarDate(item);
         }
         #endregion  
+
+        #region Shapes
+        /// <summary>
+        /// The transit routes.
+        /// </summary>
+        public IEnumerable<Shape> Shapes
+        {
+            get
+            {
+                return TransitEntityEnum<Shape>(TransitFileType.Shapes, Shape.Headers, CSVRowItemToShape);
+            }
+        }
+
+        private Shape CSVRowItemToShape(CSVRowItem item)
+        {
+            return new Shape(item);
+        }
+        #endregion
+    
     }
 }

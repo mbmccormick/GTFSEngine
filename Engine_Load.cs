@@ -19,9 +19,6 @@ using System.Linq;
 using System.Reflection;
 using System.IO.IsolatedStorage;
 
-using Microsoft.Devices.Sensors;
-using Microsoft.Phone;
-
 using Stancer.GTFSEngine.Entities;
 
 using Ximura;

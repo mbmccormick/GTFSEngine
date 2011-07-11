@@ -46,6 +46,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Test_Engine.cs" />
     <Compile Include="Load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,9 +104,13 @@
     <Content Include="TestData\Seattle\trips.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Ximura\Ximura\Ximura %28Silverlight 4%29.csproj">
-      <Project>{28E2E204-A156-42E5-BE9A-6A518B4C9694}</Project>
-      <Name>Ximura %28Silverlight 4%29</Name>
+    <ProjectReference Include="..\..\Ximura\Ximura\Ximura %284.0%29.csproj">
+      <Project>{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}</Project>
+      <Name>Ximura %284.0%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTFSEngine.csproj">
+      <Project>{E3B62AD1-8FB9-4930-A9BE-ED4A71E68045}</Project>
+      <Name>GTFSEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -12,6 +12,13 @@ namespace Stancer.GTFSEngine.Test
     [TestClass]
     public class Load
     {
+        Engine mGTFSEngine;
+
+        public void Init()
+        {
+
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
