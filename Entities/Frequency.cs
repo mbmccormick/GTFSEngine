@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ximura;
 #endregion 
 namespace Stancer.GTFSEngine.Entities
 {
@@ -62,6 +63,13 @@ namespace Stancer.GTFSEngine.Entities
         #endregion
 
         #region Constructor
+        public Frequency(CSVRowItem item) 
+        {
+            mTripID = "";
+            mStartTime = "";
+            mEndTime = "";
+            mHeadwaySecs = 0;       
+        }
         /// <summary>
         /// This is the default constructor.
         /// </summary>

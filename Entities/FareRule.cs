@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ximura;
 #endregion 
 namespace Stancer.GTFSEngine.Entities
 {
@@ -67,6 +68,15 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Constructor
+        public FareRule(CSVRowItem item)
+        {
+            mFareID = "";
+            mRouteID = "";
+            mOriginID = "";
+            mDestinationID = "";
+            mContainsID = "";
+
+        }
         /// <summary>
         /// This is the default constructor.
         /// </summary>

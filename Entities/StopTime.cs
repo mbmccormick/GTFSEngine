@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ximura;
 #endregion 
 namespace Stancer.GTFSEngine.Entities
 {
@@ -78,6 +79,19 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Constructor
+        public StopTime(CSVRowItem item)
+        {
+            mTripID = "";
+            mArrivalTime = "";
+            mDepartureTime = "";
+            mStopID = "";
+            mStopSequence = 0;
+            mStopHeadSign = "";
+            mPickUpType = PickUpType.MustAskDriver;
+            mDropOffType = DropOffType.MustAskDriver;
+            mShapeDistTraveled = "";   
+
+        }
         /// <summary>
         /// This is the default constuctor.
         /// </summary>

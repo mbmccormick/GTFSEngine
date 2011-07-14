@@ -37,45 +37,6 @@ namespace Stancer.GTFSEngine
         }
         #endregion
 
-        #region Routes
-        /// <summary>
-        /// The transit routes.
-        /// </summary>
-        public IEnumerable<Route> Routes
-        {
-            get
-            {
-                return TransitEntityEnum<Route>(TransitFileType.Routes, Route.Headers, (i) => new Route(i));
-            }
-        }
-        #endregion
-
-        #region Trips
-        /// <summary>
-        /// The transit trips.
-        /// </summary>
-        public IEnumerable<Trip> Trips
-        {
-            get
-            {
-                return TransitEntityEnum<Trip>(TransitFileType.Trips, Trip.Headers, (c) => new Trip(c));
-            }
-        }
-        #endregion
-
-        #region Stops
-        /// <summary>
-        /// The transit stops.
-        /// </summary>
-        public IEnumerable<Stop> Stops
-        {
-            get
-            {
-                return TransitEntityEnum<Stop>(TransitFileType.Stops, Stop.Headers, (c)=>new Stop(c));
-            }
-        }
-        #endregion
-
         #region Calendars
         /// <summary>
         /// The transit calendar.
@@ -117,6 +78,48 @@ namespace Stancer.GTFSEngine
         }
         #endregion  
 
+        #region Fare_Rules
+        /// <summary>
+        /// The transit calendar dates.
+        /// </summary>
+        public IEnumerable<FareRule> Fare_Rules
+        {
+            get
+            {
+                return TransitEntityEnum<FareRule>(TransitFileType.Fare_Rules
+                    , FareRule.Headers, (c) => new FareRule(c));
+            }
+        }
+        #endregion  
+        
+        #region Frequencies
+        /// <summary>
+        /// The transit calendar dates.
+        /// </summary>
+        public IEnumerable<Frequency> Frequencies
+        {
+            get
+            {
+                return TransitEntityEnum<Frequency>(TransitFileType.Frequencies
+                    , Frequency.Headers, (c) => new Frequency(c));
+            }
+        }
+        #endregion 
+        
+        #region Routes
+        /// <summary>
+        /// The transit calendar dates.
+        /// </summary>
+        public IEnumerable<Route> Routes
+        {
+            get
+            {
+                return TransitEntityEnum<Route>(TransitFileType.Routes
+                    , Route.Headers, (c) => new Route(c));
+            }
+        }
+        #endregion 
+
         #region Shapes
         /// <summary>
         /// The transit routes.
@@ -129,6 +132,58 @@ namespace Stancer.GTFSEngine
             }
         }
         #endregion
-    
+
+        #region Stop_Times
+        /// <summary>
+        /// The transit stops.
+        /// </summary>
+        public IEnumerable<StopTime> Stop_Times
+        {
+            get
+            {
+                return TransitEntityEnum<StopTime>(TransitFileType.Stop_Times, StopTime.Headers, (c) => new StopTime(c));
+            }
+        }
+        #endregion
+
+        #region Stops
+        /// <summary>
+        /// The transit stops.
+        /// </summary>
+        public IEnumerable<Stop> Stops
+        {
+            get
+            {
+                return TransitEntityEnum<Stop>(TransitFileType.Stops, Stop.Headers, (c) => new Stop(c));
+            }
+        }
+        #endregion
+
+        #region Transfers
+        /// <summary>
+        /// The transit trips.
+        /// </summary>
+        public IEnumerable<Transfer> Transfers
+        {
+            get
+            {
+                return TransitEntityEnum<Transfer>(TransitFileType.Transfers, Transfer.Headers, (c) => new Transfer(c));
+            }
+        }
+        #endregion
+
+        #region Trips
+        /// <summary>
+        /// The transit trips.
+        /// </summary>
+        public IEnumerable<Trip> Trips
+        {
+            get
+            {
+                return TransitEntityEnum<Trip>(TransitFileType.Trips, Trip.Headers, (c) => new Trip(c));
+            }
+        }
+        #endregion
+   
     }
 }
