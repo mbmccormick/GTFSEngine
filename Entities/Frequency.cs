@@ -65,10 +65,10 @@ namespace Stancer.GTFSEngine.Entities
         #region Constructor
         public Frequency(CSVRowItem item) 
         {
-            mTripID = "";
-            mStartTime = "";
-            mEndTime = "";
-            mHeadwaySecs = 0;       
+            mTripID = item["trip_id"];
+            mStartTime = item["start_time"];
+            mEndTime = item["end_time"];
+            mHeadwaySecs = int.Parse(item["headway_secs"]);       
         }
         /// <summary>
         /// This is the default constructor.

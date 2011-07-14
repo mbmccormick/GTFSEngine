@@ -70,11 +70,14 @@ namespace Stancer.GTFSEngine.Entities
         #region Constructor
         public FareRule(CSVRowItem item)
         {
-            mFareID = "";
-            mRouteID = "";
-            mOriginID = "";
-            mDestinationID = "";
-            mContainsID = "";
+            mFareID = item["fare_id"];
+            if (mFareID == null || mFareID == "")
+                throw new ArgumentNullException("fare_id");
+
+            mRouteID = item["route_id"];
+            mOriginID = item["origin_id"];
+            mDestinationID = item["destination_id"];
+            mContainsID = item["contains_id"];
 
         }
         /// <summary>

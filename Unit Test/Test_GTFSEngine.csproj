@@ -49,6 +49,9 @@
     <Compile Include="Test_Engine.cs" />
     <Compile Include="Load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test_Engine_Caltrain.cs" />
+    <Compile Include="Test_Engine_NewYork.cs" />
+    <Compile Include="Test_Engine_Seattle.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TestData\Caltrain\agency.txt" />
@@ -81,27 +84,27 @@
     <EmbeddedResource Include="TestData\Caltrain\stops.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestData\New York\agency.txt" />
-    <Content Include="TestData\New York\calendar.txt" />
-    <Content Include="TestData\New York\calendar_dates.txt" />
-    <Content Include="TestData\New York\routes.txt" />
-    <Content Include="TestData\New York\shapes.txt" />
-    <Content Include="TestData\New York\stops.txt" />
-    <Content Include="TestData\New York\stop_times.txt" />
-    <Content Include="TestData\New York\transfers.txt" />
-    <Content Include="TestData\New York\trips.txt" />
-    <Content Include="TestData\Seattle\agency.txt" />
-    <Content Include="TestData\Seattle\calendar.txt" />
-    <Content Include="TestData\Seattle\calendar_dates.txt" />
-    <Content Include="TestData\Seattle\fare_attributes.txt" />
-    <Content Include="TestData\Seattle\fare_rules.txt" />
-    <Content Include="TestData\Seattle\Frequencies.txt" />
-    <Content Include="TestData\Seattle\pattern_pairs.txt" />
-    <Content Include="TestData\Seattle\routes.txt" />
-    <Content Include="TestData\Seattle\shapes.txt" />
-    <Content Include="TestData\Seattle\stops.txt" />
-    <Content Include="TestData\Seattle\stop_times.txt" />
-    <Content Include="TestData\Seattle\trips.txt" />
+    <EmbeddedResource Include="TestData\New York\agency.txt" />
+    <EmbeddedResource Include="TestData\New York\calendar.txt" />
+    <EmbeddedResource Include="TestData\New York\calendar_dates.txt" />
+    <EmbeddedResource Include="TestData\New York\routes.txt" />
+    <EmbeddedResource Include="TestData\New York\shapes.txt" />
+    <EmbeddedResource Include="TestData\New York\stops.txt" />
+    <EmbeddedResource Include="TestData\New York\stop_times.txt" />
+    <EmbeddedResource Include="TestData\New York\transfers.txt" />
+    <EmbeddedResource Include="TestData\New York\trips.txt" />
+    <EmbeddedResource Include="TestData\Seattle\agency.txt" />
+    <EmbeddedResource Include="TestData\Seattle\calendar.txt" />
+    <EmbeddedResource Include="TestData\Seattle\calendar_dates.txt" />
+    <EmbeddedResource Include="TestData\Seattle\fare_attributes.txt" />
+    <EmbeddedResource Include="TestData\Seattle\fare_rules.txt" />
+    <EmbeddedResource Include="TestData\Seattle\frequencies.txt" />
+    <EmbeddedResource Include="TestData\Seattle\pattern_pairs.txt" />
+    <EmbeddedResource Include="TestData\Seattle\routes.txt" />
+    <EmbeddedResource Include="TestData\Seattle\shapes.txt" />
+    <EmbeddedResource Include="TestData\Seattle\stops.txt" />
+    <EmbeddedResource Include="TestData\Seattle\stop_times.txt" />
+    <EmbeddedResource Include="TestData\Seattle\trips.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Ximura\Ximura\Ximura %284.0%29.csproj">
@@ -112,6 +115,15 @@
       <Project>{E3B62AD1-8FB9-4930-A9BE-ED4A71E68045}</Project>
       <Name>GTFSEngine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="TestData\ManchesterUK\agency.txt" />
+    <Content Include="TestData\ManchesterUK\calendar.txt" />
+    <Content Include="TestData\ManchesterUK\routes.txt" />
+    <Content Include="TestData\ManchesterUK\stops.txt" />
+    <Content Include="TestData\ManchesterUK\stop_times.txt" />
+    <Content Include="TestData\ManchesterUK\trips.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

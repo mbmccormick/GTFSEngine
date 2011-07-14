@@ -13,27 +13,9 @@ using Ximura;
 namespace Stancer.GTFSEngine.Test
 {
     [TestClass]
-    public class Test_Engine_Caltrain
+    public abstract class Test_Engine
     {
-        private Engine mEngine;
-
-        [TestInitialize]
-        public void Init()
-        {
-            AssemblySourceDataCollection dc =
-                new AssemblySourceDataCollection(GetType().Assembly, "Stancer.GTFSEngine.Test.TestData.Caltrain", false);
-
-            dc.HasCalendarDates = true;
-            dc.HasFareAttributes = true;
-            dc.HasFareRules = true;
-            dc.HasFrequencies = false;
-            dc.HasShapes = true;
-            dc.HasTransfers = false;
-
-            mEngine = new Engine(dc);
-
-
-        }
+        protected Engine mEngine;
 
         [TestMethod]
         public void Test_Agency()

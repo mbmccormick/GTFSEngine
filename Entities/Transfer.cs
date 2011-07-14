@@ -60,7 +60,7 @@ namespace Stancer.GTFSEngine.Entities
         string mFromStopID;
         string mToStopID;
         TransferType mTransferType;
-        int mMinTransferTime;
+        int? mMinTransferTime;
         #endregion  
 
         #region Constructor
@@ -69,7 +69,12 @@ namespace Stancer.GTFSEngine.Entities
             //from_stop_id,to_stop_id,transfer_type,min_transfer_time
 
             mFromStopID = item["from_stop_id"];
+            if (mFromStopID == null || mFromStopID == "from_stop_id")
+                throw new ArgumentNullException("from_stop_id");
+
             mToStopID = item["to_stop_id"];
+            if (mToStopID == null || mToStopID == "to_stop_id")
+                throw new ArgumentNullException("to_stop_id");
 
             switch (item["transfer_type"])
             {
@@ -89,7 +94,9 @@ namespace Stancer.GTFSEngine.Entities
                     throw new ArgumentOutOfRangeException("transfer_type",item["transfer_type"]);
             }
 
-            mMinTransferTime = int.Parse(item["min_transfer_time"]); 
+            int minTrans;
+            if (int.TryParse(item["min_transfer_time"], out minTrans))
+                mMinTransferTime = minTrans; 
         }
         /// <summary>
         /// This is the default constructor.
@@ -136,7 +143,7 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Optional. When a connection between routes requires an amount of time between arrival and departure (transfer_type=2), the min_transfer_time field defines the amount of time that must be available in an itinerary to permit a transfer between routes at these stops. The min_transfer_time must be sufficient to permit a typical rider to move between the two stops, including buffer time to allow for schedule variance on each route. 
         /// </summary>
-        public int MinTransferTime
+        public int? MinTransferTime
         {
             get { return mMinTransferTime; }
         }

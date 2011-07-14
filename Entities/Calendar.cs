@@ -87,14 +87,14 @@ namespace Stancer.GTFSEngine.Entities
         #region Constructor
         public Calendar(CSVRowItem item)
         {
-            mServiceID = "";
-            mMonday = false;
-            mTuesday = false;
-            mWednesday = false;
-            mThursday = false;
-            mFriday = false;
-            mSaturday = false;
-            mSunday = false;
+            mServiceID = item["service_id"];
+            mMonday = item["monday"] == "1";
+            mTuesday = item["tuesday"] == "1";
+            mWednesday = item["wednesday"] == "1";
+            mThursday = item["thursday"] == "1";
+            mFriday = item["friday"] == "1";
+            mSaturday = item["saturday"] == "1";
+            mSunday = item["sunday"] == "1"; 
             mDateStart = DateTime.MinValue;
             mDateEnd = DateTime.MinValue;
 
