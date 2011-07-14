@@ -77,10 +77,10 @@ namespace Stancer.GTFSEngine.Entities
                     mTransferType= GTFSEngine.TransferType.NoTransfers ;
                     break;
                 case "1":
-                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
+                    mTransferType= GTFSEngine.TransferType.Once ;
                     break;
                 case "2":
-                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
+                    mTransferType= GTFSEngine.TransferType.Twice ;
                     break;
                 case "3":
                     mTransferType= GTFSEngine.TransferType.NoTransfers ;

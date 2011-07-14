@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ximura;
 #endregion 
 namespace Stancer.GTFSEngine.Entities
 {
@@ -69,6 +70,15 @@ namespace Stancer.GTFSEngine.Entities
         #endregion 
         
         #region Constructor
+        public FareAttribute(CSVRowItem item)
+        {
+            mFareID = "";
+            mPrice = 0;
+            mCurrencyType = "";
+            mPaymentMethod = PaymentMethodType.PayBefore;
+            mTransfers = null;
+            mTransferDuration = 0;
+        }
         /// <summary>
         /// This is the default constructor.
         /// </summary>

@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ximura;
 #endregion 
 namespace Stancer.GTFSEngine.Entities
 {
@@ -84,6 +85,20 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Constructor
+        public Calendar(CSVRowItem item)
+        {
+            mServiceID = "";
+            mMonday = false;
+            mTuesday = false;
+            mWednesday = false;
+            mThursday = false;
+            mFriday = false;
+            mSaturday = false;
+            mSunday = false;
+            mDateStart = DateTime.MinValue;
+            mDateEnd = DateTime.MinValue;
+
+        }
         /// <summary>
         /// This is the default constructor for the Calendar entry.
         /// </summary>

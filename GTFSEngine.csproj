@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\AssemblySourceData.cs" />
+    <Compile Include="DataSources\AssemblySourceDataCollection.cs" />
+    <Compile Include="DataSources\SourceDataCollectionBase.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Engine_Enumerations.cs" />
     <Compile Include="Engine_Load.cs" />
-    <Compile Include="Engine_Static.cs" />
     <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\Calendar.cs" />
     <Compile Include="Entities\CalendarDate.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="Entities\Enumerations\PaymentMethodType.cs" />
     <Compile Include="Entities\Enumerations\PickUpType.cs" />
     <Compile Include="Entities\Enumerations\RouteType.cs" />
+    <Compile Include="Entities\Enumerations\TransferOptionsType.cs" />
     <Compile Include="Entities\Enumerations\TransferType.cs" />
     <Compile Include="Entities\Enumerations\TransitFileType.cs" />
     <Compile Include="Entities\FareAttribute.cs" />
@@ -66,6 +69,7 @@
     <Compile Include="Entities\Transfer.cs" />
     <Compile Include="Entities\Trip.cs" />
     <Compile Include="Interfaces\ISourceData.cs" />
+    <Compile Include="Interfaces\ISourceDataCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +84,7 @@
       <Name>Ximura %284.0%29</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

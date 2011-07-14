@@ -39,7 +39,7 @@ namespace Stancer.GTFSEngine
         /// <summary>
         /// This file lists the times that a vehicle arrives at and departs from individual stops for each trip. 
         /// </summary>
-        StopTimes,
+        Stop_Times,
         /// <summary>
         /// This file defines dates for service IDs using a weekly schedule. Specify when service starts and ends, as well as days of the week where service is available. 
         /// </summary>
@@ -47,15 +47,15 @@ namespace Stancer.GTFSEngine
         /// <summary>
         /// This file lists exceptions for the service IDs defined in the calendar.txt file. If calendar_dates.txt includes ALL dates of service, this file may be specified instead of calendar.txt. 
         /// </summary>
-        CalendarDates,
+        Calendar_Dates,
         /// <summary>
         /// This file defines fare information for a transit organization's routes. 
         /// </summary>
-        FareAttributes,
+        Fare_Attributes,
         /// <summary>
         /// This file defines the rules for applying fare information for a transit organization's routes. 
         /// </summary>
-        FareRules,
+        Fare_Rules,
         /// <summary>
         /// This file defines the rules for drawing lines on a map to represent a transit organization's routes. 
         /// </summary>

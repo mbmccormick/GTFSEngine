@@ -7,39 +7,32 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Stancer.GTFSEngine.Entities;
+
+using Ximura;
 #endregion
 namespace Stancer.GTFSEngine.Test
 {
     [TestClass]
-    public class Test_Engine
+    public class Test_Engine_Caltrain
     {
         private Engine mEngine;
 
         [TestInitialize]
         public void Init()
         {
-            mEngine = new Engine();
+            AssemblySourceDataCollection dc =
+                new AssemblySourceDataCollection(GetType().Assembly, "Stancer.GTFSEngine.Test.TestData.Caltrain", false);
 
-            mEngine.LoadFromAssembly(TransitFileType.Calendar,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.calendar.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.StopTimes,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.stop_times.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.FareRules,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.fare_rules.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.CalendarDates,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.calendar_dates.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.Trips,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.trips.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.Agency,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.agency.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.Stops,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.stops.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.Agency,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.agency.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.Shapes,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.shapes.txt", GetType().Assembly);
-            mEngine.LoadFromAssembly(TransitFileType.FareAttributes,
-                "Stancer.GTFSEngine.Test.TestData.Caltrain.fare_attributes.txt", GetType().Assembly);
+            dc.HasCalendarDates = true;
+            dc.HasFareAttributes = true;
+            dc.HasFareRules = true;
+            dc.HasFrequencies = false;
+            dc.HasShapes = true;
+            dc.HasTransfers = false;
+
+            mEngine = new Engine();
+            mEngine.Load(dc);
+
 
         }
 
@@ -58,7 +51,13 @@ namespace Stancer.GTFSEngine.Test
         [TestMethod]
         public void Test_CalendarDates()
         {
-            var a1 = mEngine.CalendarDates.First();
+            var a1 = mEngine.Calendar_Dates.First();
+        }
+
+        [TestMethod]
+        public void Test_Fare_Attributes()
+        {
+            var a1 = mEngine.Fare_Attributes.First();
         }
 
         [TestMethod]

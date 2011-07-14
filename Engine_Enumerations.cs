@@ -32,13 +32,8 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Agency>(TransitFileType.Agency, Agency.Headers, CSVRowItemToAgency);
+                return TransitEntityEnum<Agency>(TransitFileType.Agency, Agency.Headers, (c)=>new Agency(c));
             }
-        }
-
-        private Agency CSVRowItemToAgency(CSVRowItem item)
-        {
-            return new Agency(item);
         }
         #endregion
 
@@ -50,13 +45,8 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Route>(TransitFileType.Routes, Route.Headers, CSVRowItemToRoute);
+                return TransitEntityEnum<Route>(TransitFileType.Routes, Route.Headers, (i) => new Route(i));
             }
-        }
-
-        private Route CSVRowItemToRoute(CSVRowItem item)
-        {
-            return new Route(item);
         }
         #endregion
 
@@ -68,13 +58,8 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Trip>(TransitFileType.Trips, Trip.Headers, CSVRowItemToTrip);
+                return TransitEntityEnum<Trip>(TransitFileType.Trips, Trip.Headers, (c) => new Trip(c));
             }
-        }
-
-        private Trip CSVRowItemToTrip(CSVRowItem item)
-        {
-            return new Trip(item);
         }
         #endregion
 
@@ -86,15 +71,9 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Stop>(TransitFileType.Stops, Stop.Headers, CSVRowItemToStop);
+                return TransitEntityEnum<Stop>(TransitFileType.Stops, Stop.Headers, (c)=>new Stop(c));
             }
         }
-
-        private Stop CSVRowItemToStop(CSVRowItem item)
-        {
-            return new Stop(item);
-        }
-
         #endregion
 
         #region Calendars
@@ -105,31 +84,36 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Calendar>(TransitFileType.Calendar, Calendar.Headers, CSVRowItemToCalendar);
+                return TransitEntityEnum<Calendar>(TransitFileType.Calendar, Calendar.Headers, (c)=>new Calendar(c));
             }
-        }
-
-        private Calendar CSVRowItemToCalendar(CSVRowItem item)
-        {
-            return new Calendar();
         }
         #endregion
 
-        #region CalendarDates
+        #region Calendar_Dates
         /// <summary>
         /// The transit calendar dates.
         /// </summary>
-        public IEnumerable<CalendarDate> CalendarDates
+        public IEnumerable<CalendarDate> Calendar_Dates
         {
             get
             {
-                return TransitEntityEnum<CalendarDate>(TransitFileType.CalendarDates, CalendarDate.Headers, CSVRowItemToCalendarDate);
+                return TransitEntityEnum<CalendarDate>(TransitFileType.Calendar_Dates
+                    , CalendarDate.Headers, (c)=>new CalendarDate(c));
             }
         }
+        #endregion  
 
-        private CalendarDate CSVRowItemToCalendarDate(CSVRowItem item)
+        #region Fare_Attributes
+        /// <summary>
+        /// The transit calendar dates.
+        /// </summary>
+        public IEnumerable<FareAttribute> Fare_Attributes
         {
-            return new CalendarDate(item);
+            get
+            {
+                return TransitEntityEnum<FareAttribute>(TransitFileType.Fare_Attributes
+                    , FareAttribute.Headers, (c) => new FareAttribute(c));
+            }
         }
         #endregion  
 
@@ -141,13 +125,8 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Shape>(TransitFileType.Shapes, Shape.Headers, CSVRowItemToShape);
+                return TransitEntityEnum<Shape>(TransitFileType.Shapes, Shape.Headers, (c)=>new Shape(c));
             }
-        }
-
-        private Shape CSVRowItemToShape(CSVRowItem item)
-        {
-            return new Shape(item);
         }
         #endregion
     

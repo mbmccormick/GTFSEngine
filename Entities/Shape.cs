@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ximura;
 #endregion 
 namespace Stancer.GTFSEngine.Entities
 {
@@ -65,6 +66,19 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Constructor
+        /// <summary>
+        /// shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled
+        /// </summary>
+        /// <param name="item"></param>
+        public Shape(CSVRowItem item)
+        {
+            mID = item["shape_id"];
+            mPtLat = decimal.Parse(item["shape_pt_lat"]);
+            mPtLon = decimal.Parse(item["shape_pt_lon"]);
+            mPtSequence = int.Parse(item["shape_pt_sequence"]);
+            mDistTraveled = item["shape_dist_traveled"];
+        }
+        
         /// <summary>
         /// This is the constructor for the Shape.
         /// </summary>
