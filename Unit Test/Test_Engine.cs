@@ -30,8 +30,7 @@ namespace Stancer.GTFSEngine.Test
             dc.HasShapes = true;
             dc.HasTransfers = false;
 
-            mEngine = new Engine();
-            mEngine.Load(dc);
+            mEngine = new Engine(dc);
 
 
         }

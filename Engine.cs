@@ -25,6 +25,24 @@ namespace Stancer.GTFSEngine
 {
     public partial class Engine
     {
+        #region Declarations
+        private object mSyncLock = new object();
+
+        private ISourceDataCollection mData;
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// This is the default constructor.
+        /// </summary>
+        /// <param name="data">The data source collection.</param>
+        public Engine(ISourceDataCollection data)
+        {
+            mData = data;
+        }
+        #endregion
+
+
         #region HasTransitData(TransitFileType tType)
         /// <summary>
         /// This function checks whether there is valid data for the specific transit type.

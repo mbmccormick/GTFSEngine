@@ -58,8 +58,7 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<CalendarDate>(TransitFileType.Calendar_Dates
-                    , CalendarDate.Headers, (c)=>new CalendarDate(c));
+                return TransitEntityEnum<CalendarDate>(TransitFileType.Calendar_Dates, CalendarDate.Headers, (c)=>new CalendarDate(c));
             }
         }
         #endregion  
@@ -72,8 +71,7 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<FareAttribute>(TransitFileType.Fare_Attributes
-                    , FareAttribute.Headers, (c) => new FareAttribute(c));
+                return TransitEntityEnum<FareAttribute>(TransitFileType.Fare_Attributes, FareAttribute.Headers, (c) => new FareAttribute(c));
             }
         }
         #endregion  
@@ -86,8 +84,7 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<FareRule>(TransitFileType.Fare_Rules
-                    , FareRule.Headers, (c) => new FareRule(c));
+                return TransitEntityEnum<FareRule>(TransitFileType.Fare_Rules, FareRule.Headers, (c) => new FareRule(c));
             }
         }
         #endregion  
@@ -100,8 +97,7 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Frequency>(TransitFileType.Frequencies
-                    , Frequency.Headers, (c) => new Frequency(c));
+                return TransitEntityEnum<Frequency>(TransitFileType.Frequencies, Frequency.Headers, (c) => new Frequency(c));
             }
         }
         #endregion 
@@ -114,8 +110,7 @@ namespace Stancer.GTFSEngine
         {
             get
             {
-                return TransitEntityEnum<Route>(TransitFileType.Routes
-                    , Route.Headers, (c) => new Route(c));
+                return TransitEntityEnum<Route>(TransitFileType.Routes, Route.Headers, (c) => new Route(c));
             }
         }
         #endregion 
@@ -183,7 +178,6 @@ namespace Stancer.GTFSEngine
                 return TransitEntityEnum<Trip>(TransitFileType.Trips, Trip.Headers, (c) => new Trip(c));
             }
         }
-        #endregion
-   
+        #endregion 
     }
 }
