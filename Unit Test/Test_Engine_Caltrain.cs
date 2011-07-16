@@ -19,15 +19,16 @@ namespace Stancer.GTFSEngine.Test
         [TestInitialize]
         public void Init()
         {
-            AssemblySourceDataCollection dc =
-                new AssemblySourceDataCollection(GetType().Assembly, "Stancer.GTFSEngine.Test.TestData.Caltrain", false);
 
-            dc.HasCalendarDates = true;
-            dc.HasFareAttributes = true;
-            dc.HasFareRules = true;
-            dc.HasFrequencies = false;
-            dc.HasShapes = true;
-            dc.HasTransfers = false;
+            ResourceSourceDataCollection dc =
+                new ResourceSourceDataCollection(Stancer.Win7Trans.Resources.Caltrain.Properties.Resources.ResourceManager);
+
+            //dc.HasCalendarDates = true;
+            //dc.HasFareAttributes = true;
+            //dc.HasFareRules = true;
+            //dc.HasFrequencies = false;
+            //dc.HasShapes = true;
+            //dc.HasTransfers = false;
 
             mEngine = new Engine(dc);
         }

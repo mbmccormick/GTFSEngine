@@ -26,6 +26,72 @@ namespace Stancer.GTFSEngine
         protected Dictionary<TransitFileType, Func<Stream>> mStreams;
         #endregion
 
+        #region Names
+        /// <summary>
+        /// This enumerable property returns a list of files types and their names.
+        /// </summary>
+        protected IEnumerable<KeyValuePair<TransitFileType, string>> Names
+        {
+            get
+            {
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Agency, "agency");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Calendar, "calendar");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Calendar_Dates, "calendar_dates");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Fare_Attributes, "fare_attributes");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Fare_Rules, "fare_rules");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Frequencies, "frequencies");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Routes, "routes");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Shapes, "shapes");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Stop_Times, "stop_times");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Stops, "stops");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Transfers, "transfers");
+
+                yield return new KeyValuePair<TransitFileType, string>
+                    (TransitFileType.Trips, "trips");
+            }
+
+        }
+        #endregion
+
+        #region Required
+        /// <summary>
+        /// This enumerable property returns a list of files types and their names.
+        /// </summary>
+        protected IEnumerable<TransitFileType> Required
+        {
+            get
+            {
+                yield return TransitFileType.Agency;
+                yield return TransitFileType.Calendar;
+                yield return TransitFileType.Routes;
+                yield return TransitFileType.Stop_Times;
+                yield return TransitFileType.Stops;
+                yield return TransitFileType.Trips;
+            }
+        }
+        #endregion
+
         #region Constructor
         /// <summary>
         /// This is the abstract constructor.

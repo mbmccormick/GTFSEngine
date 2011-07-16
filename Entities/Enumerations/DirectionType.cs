@@ -23,10 +23,10 @@ namespace Stancer.GTFSEngine
         /// <summary>
         /// 0 - travel in one direction (e.g. outbound travel) 
         /// </summary>
-        Forwards = 0,
+        Outbound = 0,
         /// <summary>
         /// 1 - travel in the opposite direction (e.g. inbound travel) 
         /// </summary>
-        Backwards = 1
+        Inbound = 1
     }
 }

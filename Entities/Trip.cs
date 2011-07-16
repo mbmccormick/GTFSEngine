@@ -67,13 +67,15 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Declarations
-        private string mID;
         private string mRouteID;
         private string mServiceID;
+        private string mTripID;
+
         private string mHeadSign;
         private string mShortName;
 
         private DirectionType? mDirectionID;
+
         private string mBlockID;
         private string mShapeID;
         #endregion  
@@ -84,24 +86,14 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="item">The CSV row item.</param>
         public Trip(CSVRowItem item)
         {
-            mID = item["trip_id"];
-            mRouteID = item["route_id"];
-            mServiceID = item["service_id"];
+            mRouteID = item.ValidateNotEmptyOrNull("route_id");
+            mServiceID = item.ValidateNotEmptyOrNull("service_id");
+            mTripID = item.ValidateNotEmptyOrNull("trip_id");
+
             mHeadSign = item["trip_headsign"];
             mShortName = item["trip_short_name"];
 
-            switch (item["direction_id"])
-            {
-                case "0":
-                    mDirectionID = DirectionType.Forwards;
-                    break;
-                case "1":
-                    mDirectionID = DirectionType.Backwards;
-                    break;
-                default:
-                    mDirectionID = null;
-                    break;
-            }
+            mDirectionID = item["direction_id"].ToDirectionType();
 
             mBlockID = item["block_id"];
             mShapeID = item["shape_id"];
@@ -118,7 +110,7 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="BlockID"></param>
         /// <param name="ShapeID"></param>
         public Trip(
-            string ID,
+            string TripID,
             string RouteID,
             string ServiceID,
             string HeadSign,
@@ -128,7 +120,7 @@ namespace Stancer.GTFSEngine.Entities
             string ShapeID
             )
         {
-            mID= ID;
+            mTripID = TripID;
             mRouteID= RouteID;
             mServiceID= ServiceID;
             mHeadSign = HeadSign;
@@ -154,12 +146,12 @@ namespace Stancer.GTFSEngine.Entities
         /// </summary>
         public string ServiceID { get{ return mServiceID ;}}
         #endregion  
-        #region ID
+        #region TripID
         /// <summary>
         /// Required. The trip_id field contains an ID that identifies a trip. 
         /// The trip_id is dataset unique. 
         /// </summary>
-        public string ID { get{ return mID ;}}
+        public string TripID { get { return mTripID; } }
         #endregion  
         #region HeadSign
         /// <summary>

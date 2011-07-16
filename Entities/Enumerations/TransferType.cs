@@ -31,6 +31,10 @@ namespace Stancer.GTFSEngine
         /// <summary>
         /// Passenger may transfer twice. 
         /// </summary>
-        Twice
+        Twice,
+        /// <summary>
+        /// Passenger transfers are unlimited.
+        /// </summary>
+        Unlimited
     }
 }

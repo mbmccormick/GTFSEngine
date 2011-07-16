@@ -65,19 +65,22 @@ namespace Stancer.GTFSEngine.Entities
         decimal mPrice;
         string mCurrencyType;
         PaymentMethodType mPaymentMethod;
-        TransferType? mTransfers;
-        int mTransferDuration;
+        TransferType mTransfers;
+        int? mTransferDuration;
         #endregion 
         
         #region Constructor
         public FareAttribute(CSVRowItem item)
         {
-            mFareID = "";
-            mPrice = 0;
-            mCurrencyType = "";
-            mPaymentMethod = PaymentMethodType.PayBefore;
-            mTransfers = null;
-            mTransferDuration = 0;
+            mFareID = item.ValidateNotEmptyOrNull("fare_id");
+            mPrice = decimal.Parse(item["price"]);
+            mCurrencyType = item.ValidateNotEmptyOrNull("currency_type");
+
+            mPaymentMethod = item["payment_method"].ToPaymentMethodType();
+            mTransfers = item["transfers"].ToTransferType();
+
+            int tDur;
+            mTransferDuration = int.TryParse(item["transfer_duration"], out tDur) ? tDur : (int?)null;
         }
         /// <summary>
         /// This is the default constructor.
@@ -93,8 +96,8 @@ namespace Stancer.GTFSEngine.Entities
             decimal Price,
             string CurrencyType,
             PaymentMethodType PaymentMethod,
-            TransferType? Transfers,
-            int TransferDuration
+            TransferType Transfers,
+            int? TransferDuration
             )
         {
             mFareID= FareID;
@@ -137,14 +140,14 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Required. The transfers field specifies the number of transfers permitted on this fare.
         /// </summary>
-        public TransferType? Transfers
+        public TransferType Transfers
         {
             get { return mTransfers; }
         }
         /// <summary>
         /// Optional. The transfer_duration field specifies the length of time in seconds before a transfer expires. 
         /// </summary>
-        public int TransferDuration
+        public int? TransferDuration
         {
             get { return mTransferDuration; }
         }

@@ -68,11 +68,13 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Constructor
+        /// <summary>
+        /// This constructor sets the default values from the CSVRowItem.
+        /// </summary>
+        /// <param name="item">The item.</param>
         public FareRule(CSVRowItem item)
         {
-            mFareID = item["fare_id"];
-            if (mFareID == null || mFareID == "")
-                throw new ArgumentNullException("fare_id");
+            mFareID = item.ValidateNotEmptyOrNull("fare_id");
 
             mRouteID = item["route_id"];
             mOriginID = item["origin_id"];

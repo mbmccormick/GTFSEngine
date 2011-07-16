@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Caltrain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Win7Trans\Caltrain\bin\Debug\Caltrain.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
   </ItemGroup>
@@ -54,59 +57,6 @@
     <Compile Include="Test_Engine_Seattle.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\agency.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\trips.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\calendar.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\calendar_dates.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\fare_attributes.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\fare_rules.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\routes.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\shapes.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\stop_times.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Caltrain\stops.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\New York\agency.txt" />
-    <EmbeddedResource Include="TestData\New York\calendar.txt" />
-    <EmbeddedResource Include="TestData\New York\calendar_dates.txt" />
-    <EmbeddedResource Include="TestData\New York\routes.txt" />
-    <EmbeddedResource Include="TestData\New York\shapes.txt" />
-    <EmbeddedResource Include="TestData\New York\stops.txt" />
-    <EmbeddedResource Include="TestData\New York\stop_times.txt" />
-    <EmbeddedResource Include="TestData\New York\transfers.txt" />
-    <EmbeddedResource Include="TestData\New York\trips.txt" />
-    <EmbeddedResource Include="TestData\Seattle\agency.txt" />
-    <EmbeddedResource Include="TestData\Seattle\calendar.txt" />
-    <EmbeddedResource Include="TestData\Seattle\calendar_dates.txt" />
-    <EmbeddedResource Include="TestData\Seattle\fare_attributes.txt" />
-    <EmbeddedResource Include="TestData\Seattle\fare_rules.txt" />
-    <EmbeddedResource Include="TestData\Seattle\frequencies.txt" />
-    <EmbeddedResource Include="TestData\Seattle\pattern_pairs.txt" />
-    <EmbeddedResource Include="TestData\Seattle\routes.txt" />
-    <EmbeddedResource Include="TestData\Seattle\shapes.txt" />
-    <EmbeddedResource Include="TestData\Seattle\stops.txt" />
-    <EmbeddedResource Include="TestData\Seattle\stop_times.txt" />
-    <EmbeddedResource Include="TestData\Seattle\trips.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Ximura\Ximura\Ximura %284.0%29.csproj">
       <Project>{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}</Project>
       <Name>Ximura %284.0%29</Name>
@@ -117,14 +67,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="TestData\ManchesterUK\agency.txt" />
-    <Content Include="TestData\ManchesterUK\calendar.txt" />
-    <Content Include="TestData\ManchesterUK\routes.txt" />
-    <Content Include="TestData\ManchesterUK\stops.txt" />
-    <Content Include="TestData\ManchesterUK\stop_times.txt" />
-    <Content Include="TestData\ManchesterUK\trips.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

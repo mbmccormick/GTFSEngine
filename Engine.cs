@@ -42,7 +42,6 @@ namespace Stancer.GTFSEngine
         }
         #endregion
 
-
         #region HasTransitData(TransitFileType tType)
         /// <summary>
         /// This function checks whether there is valid data for the specific transit type.

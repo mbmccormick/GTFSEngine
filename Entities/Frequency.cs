@@ -57,8 +57,8 @@ namespace Stancer.GTFSEngine.Entities
         #endregion 
         #region Declarations
         string mTripID;
-        string mStartTime;
-        string mEndTime;
+        TimeSpan mStartTime;
+        TimeSpan mEndTime;
         int mHeadwaySecs;
         #endregion
 
@@ -66,8 +66,8 @@ namespace Stancer.GTFSEngine.Entities
         public Frequency(CSVRowItem item) 
         {
             mTripID = item["trip_id"];
-            mStartTime = item["start_time"];
-            mEndTime = item["end_time"];
+            mStartTime = item["start_time"].ToTimeSpan();
+            mEndTime = item["end_time"].ToTimeSpan();
             mHeadwaySecs = int.Parse(item["headway_secs"]);       
         }
         /// <summary>
@@ -79,15 +79,16 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="HeadwaySecs"></param>
         public Frequency(
             string TripID,
-            string StartTime,
-            string EndTime,
+            TimeSpan StartTime,
+            TimeSpan EndTime,
             int HeadwaySecs           
             )
         {
-            mTripID=TripID ;
-            mStartTime=StartTime ;
-            mEndTime=EndTime ;
-            mHeadwaySecs=HeadwaySecs ;
+            mTripID=TripID;
+            mStartTime=StartTime;
+            mEndTime=EndTime;
+            mHeadwaySecs=HeadwaySecs;
+
         }
         #endregion  
 
@@ -104,7 +105,7 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Required. The start_time field specifies the time at which service begins with the specified frequency. The time is measured from "noon minus 12h" (effectively midnight, except for days on which daylight savings time changes occur) at the beginning of the service date. For times occurring after midnight, enter the time as a value greater than 24:00:00 in HH:MM:SS local time for the day on which the trip schedule begins. E.g. 25:35:00. 
         /// </summary>
-        public string StartTime
+        public TimeSpan StartTime
         {
             get { return mStartTime; }
         }
@@ -113,7 +114,7 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Required. The end_time field indicates the time at which service changes to a different frequency (or ceases) at the first stop in the trip. The time is measured from "noon minus 12h" (effectively midnight, except for days on which daylight savings time changes occur) at the beginning of the service date. For times occurring after midnight, enter the time as a value greater than 24:00:00 in HH:MM:SS local time for the day on which the trip schedule begins. E.g. 25:35:00. 
         /// </summary>
-        public string EndTime
+        public TimeSpan EndTime
         {
             get { return mEndTime; }
         }

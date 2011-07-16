@@ -61,32 +61,18 @@ namespace Stancer.GTFSEngine.Entities
 
         #region Constructor
 
+        /// <summary>
+        /// This is the CSVRowItem constructor.
+        /// </summary>
+        /// <param name="item">The row item.</param>
         public CalendarDate(CSVRowItem item)
         {
             //service_id,date,exception_type
-            mServiceID = item["service_id"];
+            mServiceID = item.ValidateNotEmptyOrNull("service_id");
 
-            string tempDate = item["date"];
-            if (tempDate.Length != 8)
-                throw new ArgumentOutOfRangeException("data", "date field should only be 8 characters long.");
+            mDate = item["date"].ToDate();
 
-            mDate = new DateTime(
-                int.Parse(tempDate.Substring(0, 4)),
-                int.Parse(tempDate.Substring(4, 2)),
-                int.Parse(tempDate.Substring(6, 2))
-                );
-
-            switch (item["exception_type"])
-            {
-                case "1":
-                    mExceptionType = CalendarExceptionType.ServiceAdded;
-                    break;
-                case "2":
-                    mExceptionType = CalendarExceptionType.ServiceRemoved;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("");
-            }
+            mExceptionType=item["exception_type"].ToCalendarExceptionType();
         }
         /// <summary>
         /// The struct constructor.

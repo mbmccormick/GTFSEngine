@@ -63,7 +63,7 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Declarations
-        private string mID;
+        private string mAgencyID;
         private string mName;
         private string mTimeZone;
         private string mPhone;
@@ -79,12 +79,12 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="item">The csv item.</param>
         public Agency(CSVRowItem item)
         {
-            mID = item["agency_id"];
-            mName = item["agency_name"];
+            mAgencyID = item["agency_id"];
 
-            string url = item["agency_url"];
-            mUrl = url == null || url == "" ? null : new Uri(url);
-            mTimeZone = item["agency_timezone"];
+            mName = item.ValidateNotEmptyOrNull("agency_name");
+            mUrl = new Uri(item.ValidateNotEmptyOrNull("agency_url"));
+            mTimeZone = item.ValidateNotEmptyOrNull("agency_timezone");
+
             mLang = item["agency_lang"];
             mPhone = item["agency_phone"];
         }
@@ -96,14 +96,14 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="TimeZone">The agency timezone description.</param>
         /// <param name="Phone">The agency phone number.</param>
         public Agency(
-            string ID, 
+            string AgencyID, 
             string Name, 
             Uri Url,
             string TimeZone, 
             string Lang,
             string Phone)
         {
-            mID         = ID;
+            mAgencyID   = AgencyID;
             mName       = Name;
             mUrl        = Url;
             mTimeZone   = TimeZone;
@@ -112,12 +112,12 @@ namespace Stancer.GTFSEngine.Entities
         }
         #endregion  
 
-        #region ID
+        #region AgencyID
         /// <summary>
         /// Optional. The agency_id field is an ID that uniquely identifies a transit agency. A transit feed may represent data from more than one agency.
         /// The agency_id is dataset unique. This field is optional for transit feeds that only contain data for a single agency. 
         /// </summary>
-        public string ID { get { return mID; } }
+        public string AgencyID { get { return mAgencyID; } }
         #endregion  
         #region Name
         /// <summary>

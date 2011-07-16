@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DataSources\AssemblySourceData.cs" />
     <Compile Include="DataSources\AssemblySourceDataCollection.cs" />
+    <Compile Include="DataSources\ResourceSourceDataCollection.cs" />
     <Compile Include="DataSources\SourceDataCollectionBase.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Engine_Enumerations.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Entities\StopTime.cs" />
     <Compile Include="Entities\Transfer.cs" />
     <Compile Include="Entities\Trip.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Interfaces\ISourceData.cs" />
     <Compile Include="Interfaces\ISourceDataCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,9 +85,7 @@
       <Name>Ximura %284.0%29</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helper\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

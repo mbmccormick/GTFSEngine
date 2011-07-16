@@ -54,16 +54,18 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\AssemblySourceData.cs" />
+    <Compile Include="DataSources\ResourceSourceDataCollection.cs" />
+    <Compile Include="DataSources\SourceDataCollectionBase.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Engine_Enumerations.cs" />
-    <Compile Include="Engine_Load.cs" />
-    <Compile Include="Engine_Static.cs" />
     <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\Calendar.cs" />
     <Compile Include="Entities\CalendarDate.cs" />
     <Compile Include="Entities\Enumerations\CalendarExceptionType.cs" />
     <Compile Include="Entities\Enumerations\DirectionType.cs" />
     <Compile Include="Entities\Enumerations\DropOffType.cs" />
+    <Compile Include="Entities\Enumerations\TransferOptionsType.cs" />
     <Compile Include="Entities\Enumerations\TransitFileType.cs" />
     <Compile Include="Entities\Enumerations\LocationType.cs" />
     <Compile Include="Entities\Enumerations\PaymentMethodType.cs" />
@@ -79,7 +81,9 @@
     <Compile Include="Entities\StopTime.cs" />
     <Compile Include="Entities\Transfer.cs" />
     <Compile Include="Entities\Trip.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Interfaces\ISourceData.cs" />
+    <Compile Include="Interfaces\ISourceDataCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,13 +93,16 @@
     <None Include="_Documentation\RFC 4180 - Common Format and MIME Type for Comma-Separated Values %28CSV%29 Files.mht" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="_Ximura.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Ximura\Ximura\Ximura %28Silverlight 4%29.csproj">
       <Project>{28E2E204-A156-42E5-BE9A-6A518B4C9694}</Project>
       <Name>Ximura %28Silverlight 4%29</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="_Ximura.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

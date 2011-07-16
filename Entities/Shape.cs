@@ -61,7 +61,7 @@ namespace Stancer.GTFSEngine.Entities
         string mID;
         decimal mPtLat;
         decimal mPtLon;
-        int mPtSequence;
+        int? mPtSequence;
         string mDistTraveled;
         #endregion  
 
@@ -75,7 +75,10 @@ namespace Stancer.GTFSEngine.Entities
             mID = item["shape_id"];
             mPtLat = decimal.Parse(item["shape_pt_lat"]);
             mPtLon = decimal.Parse(item["shape_pt_lon"]);
-            mPtSequence = int.Parse(item["shape_pt_sequence"]);
+
+            int outPtSequence;
+            mPtSequence = int.TryParse(item["shape_pt_sequence"], out outPtSequence)?outPtSequence:(int?)null;
+
             mDistTraveled = item["shape_dist_traveled"];
         }
         
@@ -91,7 +94,7 @@ namespace Stancer.GTFSEngine.Entities
             string ID,
             decimal PtLat,
             decimal PtLon,
-            int PtSequence,
+            int? PtSequence,
             string DistTraveled       
             )
         {
@@ -127,7 +130,7 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Required. The shape_pt_sequence field associates the latitude and longitude of a shape point with its sequence order along the shape. The values for shape_pt_sequence must be non-negative integers, and they must increase along the trip.
         /// </summary>
-        public int PtSequence
+        public int? PtSequence
         {
             get { return mPtSequence; }
         }

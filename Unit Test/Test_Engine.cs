@@ -20,37 +20,37 @@ namespace Stancer.GTFSEngine.Test
         [TestMethod]
         public void Test_Agency()
         {
-            var a1 = mEngine.Agencies.First();
+            var a1 = mEngine.Agencies.Last();
         }
 
         [TestMethod]
         public void Test_Calendar()
         {
-            var a1 = mEngine.Calendars.First();
+            var a1 = mEngine.Calendars.Last();
         }
 
         [TestMethod]
         public void Test_CalendarDates()
         {
-            var a1 = mEngine.Calendar_Dates.First();
+            var a1 = mEngine.Calendar_Dates.Last();
         }
 
         [TestMethod]
         public void Test_Fare_Attributes()
         {
-            var a1 = mEngine.Fare_Attributes.First();
+            var a1 = mEngine.Fare_Attributes.Last();
         }
 
         [TestMethod]
         public void Test_Routes()
         {
-            var a1 = mEngine.Routes.First();
+            var a1 = mEngine.Routes.Last();
         }
 
         [TestMethod]
         public void Test_Shapes()
         {
-            var a1 = mEngine.Shapes.First();
+            var a1 = mEngine.Shapes.Last();
         }
     }
 }

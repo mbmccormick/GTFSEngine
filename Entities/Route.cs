@@ -69,7 +69,7 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
 
         #region Declarations
-        private string mID;
+        private string mRouteID;
         private string mAgencyID;
         private string mShortName;
         private string mLongName;
@@ -87,52 +87,35 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="item">The CSV row item.</param>
         public Route(CSVRowItem item)
         {
-            mID = item["route_id"];
+            mRouteID = item.ValidateNotEmptyOrNull("route_id");
+
             mAgencyID = item["agency_id"];
 
-            mShortName = item["route_short_name"];
             mLongName = item["route_long_name"];
+            mShortName = item["route_short_name"];
+
+            if ((mShortName == null || mShortName == "") && (mLongName == null || mLongName == ""))
+                throw new ArgumentException("Must specify either route_long_name or route_short_name");
+
+            if (mShortName == null || mShortName == "")
+                mShortName = mLongName;
+            else if (mLongName == null || mLongName == "")
+                mLongName = mShortName;
+
             mDesc = item["route_desc"];
 
-            switch (item["route_type"])
-            {
-                case "0":
-                    mRouteType = RouteType.Tram;
-                    break;
-                case "1":
-                    mRouteType = RouteType.Subway;
-                    break;
-                case "2":
-                    mRouteType = RouteType.Rail;
-                    break;
-                case "3":
-                    mRouteType = RouteType.Bus;
-                    break;
-                case "4":
-                    mRouteType = RouteType.Ferry;
-                    break;
-                case "5":
-                    mRouteType = RouteType.CableCar;
-                    break;
-                case "6":
-                    mRouteType = RouteType.Gondala;
-                    break;
-                case "7":
-                    mRouteType = RouteType.Fenicular;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(string.Format("{0} is not supported from Route type.", item["route_type"]));
-            }
+            mRouteType=item["route_type"].ToRouteType();
 
             string url = item["route_url"];
             mRouteUrl = url == null || url ==""?null:new Uri(url);
+
             mRouteColor = item["route_color"];
             mRouteTextColor = item["route_text_color"];
         }
         /// <summary>
         /// This is the required constructor for the type.
         /// </summary>
-        /// <param name="ID"></param>
+        /// <param name="RouteID"></param>
         /// <param name="AgencyID"></param>
         /// <param name="NameShort"></param>
         /// <param name="NameLong"></param>
@@ -142,7 +125,7 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="RouteTextColor"></param>
         /// <param name="RouteUrl"></param>
         public Route(
-            string ID,
+            string RouteID,
             string AgencyID,
             string NameShort,
             string NameLong,
@@ -153,7 +136,7 @@ namespace Stancer.GTFSEngine.Entities
             Uri RouteUrl          
             )
         {
-            mID=ID ;
+            mRouteID=RouteID ;
             mAgencyID = AgencyID;
 
             mShortName=NameShort ;
@@ -167,13 +150,13 @@ namespace Stancer.GTFSEngine.Entities
         }
         #endregion  
 
-        #region ID
+        #region RouteID
         /// <summary>
         /// Required. The route_id field contains an ID that uniquely identifies a route. The route_id is dataset unique.
         /// </summary>
-        public string ID
+        public string RouteID
         {
-            get { return mID; }
+            get { return mRouteID; }
         }
         #endregion  
         #region AgencyID

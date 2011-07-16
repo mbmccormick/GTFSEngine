@@ -68,28 +68,37 @@ namespace Stancer.GTFSEngine.Entities
         #endregion  
         #region Declarations
         string mTripID;
-        string mArrivalTime;
-        string mDepartureTime;
+        TimeSpan mArrivalTime;
+        TimeSpan mDepartureTime;
         string mStopID;
         int mStopSequence;
         string mStopHeadSign;
-        PickUpType mPickUpType;
-        DropOffType mDropOffType;
+        PickUpType? mPickUpType;
+        DropOffType? mDropOffType;
         string mShapeDistTraveled;
         #endregion  
 
         #region Constructor
+        /// <summary>
+        /// This constructor allows the data to be polulated by the CSVRowItem string.
+        /// </summary>
+        /// <param name="item">The row item.</param>
         public StopTime(CSVRowItem item)
         {
-            mTripID = "";
-            mArrivalTime = "";
-            mDepartureTime = "";
-            mStopID = "";
-            mStopSequence = 0;
-            mStopHeadSign = "";
-            mPickUpType = PickUpType.MustAskDriver;
-            mDropOffType = DropOffType.MustAskDriver;
-            mShapeDistTraveled = "";   
+            mTripID = item["trip_id"];
+
+            mArrivalTime = item["arrival_time"].ToTimeSpan();
+            mDepartureTime = item["departure_time"].ToTimeSpan();
+
+            mStopID = item["stop_id"];
+
+            mStopSequence = int.Parse(item["stop_sequence"]);
+            mStopHeadSign = item["stop_headsign"];
+
+            mPickUpType = item["pickup_type"].ToPickUpType();
+            mDropOffType = item["drop_off_type"].ToDropOffType();
+
+            mShapeDistTraveled = item["shape_dist_traveled"];   
 
         }
         /// <summary>
@@ -106,8 +115,8 @@ namespace Stancer.GTFSEngine.Entities
         /// <param name="ShapeDistTraveled"></param>
         public StopTime(
             string TripID,
-            string ArrivalTime,
-            string DepartureTime,
+            TimeSpan ArrivalTime,
+            TimeSpan DepartureTime,
             string StopID,
             int StopSequence,
             string StopHeadSign,
@@ -139,14 +148,14 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Required. The arrival_time specifies the arrival time at a specific stop for a specific trip on a route. The time is measured from "noon minus 12h" (effectively midnight, except for days on which daylight savings time changes occur) at the beginning of the service date. For times occurring after midnight on the service date, enter the time as a value greater than 24:00:00 in HH:MM:SS local time for the day on which the trip schedule begins. If you don't have separate times for arrival and departure at a stop, enter the same value for arrival_time and departure_time. 
         /// </summary>
-        public string ArrivalTime
+        public TimeSpan ArrivalTime
         {
             get { return mArrivalTime; }
         }
         /// <summary>
         /// Required. The departure_time specifies the departure time from a specific stop for a specific trip on a route. The time is measured from "noon minus 12h" (effectively midnight, except for days on which daylight savings time changes occur) at the beginning of the service date. For times occurring after midnight on the service date, enter the time as a value greater than 24:00:00 in HH:MM:SS local time for the day on which the trip schedule begins. If you don't have separate times for arrival and departure at a stop, enter the same value for arrival_time and departure_time. 
         /// </summary>
-        public string DepartureTime
+        public TimeSpan DepartureTime
         {
             get { return mDepartureTime; }
         }
@@ -174,14 +183,14 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Optional. The pickup_type field indicates whether passengers are picked up at a stop as part of the normal schedule or whether a pickup at the stop is not available. This field also allows the transit agency to indicate that passengers must call the agency or notify the driver to arrange a pickup at a particular stop.
         /// </summary>
-        public PickUpType PickUpType
+        public PickUpType? PickUpType
         {
             get { return mPickUpType; }
         }
         /// <summary>
         /// Optional. The drop_off_type field indicates whether passengers are dropped off at a stop as part of the normal schedule or whether a drop off at the stop is not available. This field also allows the transit agency to indicate that passengers must call the agency or notify the driver to arrange a drop off at a particular stop.
         /// </summary>
-        public DropOffType DropOffType
+        public DropOffType? DropOffType
         {
             get { return mDropOffType; }
         }

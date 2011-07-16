@@ -59,44 +59,28 @@ namespace Stancer.GTFSEngine.Entities
         #region Declarations
         string mFromStopID;
         string mToStopID;
-        TransferType mTransferType;
+        TransferOptionsType mTransferType;
         int? mMinTransferTime;
         #endregion  
 
         #region Constructor
+        /// <summary>
+        /// This is the csv row item constructor.
+        /// </summary>
+        /// <param name="item">The csv row item object to populate the structure.</param>
         public Transfer(CSVRowItem item)
         {
             //from_stop_id,to_stop_id,transfer_type,min_transfer_time
 
-            mFromStopID = item["from_stop_id"];
-            if (mFromStopID == null || mFromStopID == "from_stop_id")
-                throw new ArgumentNullException("from_stop_id");
+            mFromStopID = item.ValidateNotEmptyOrNull("from_stop_id");
 
-            mToStopID = item["to_stop_id"];
-            if (mToStopID == null || mToStopID == "to_stop_id")
-                throw new ArgumentNullException("to_stop_id");
+            mToStopID = item.ValidateNotEmptyOrNull("to_stop_id");
 
-            switch (item["transfer_type"])
-            {
-                case "0":
-                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
-                    break;
-                case "1":
-                    mTransferType= GTFSEngine.TransferType.Once ;
-                    break;
-                case "2":
-                    mTransferType= GTFSEngine.TransferType.Twice ;
-                    break;
-                case "3":
-                    mTransferType= GTFSEngine.TransferType.NoTransfers ;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("transfer_type",item["transfer_type"]);
-            }
+            mTransferType = item["transfer_type"].ToTransferOptionsType();
 
             int minTrans;
-            if (int.TryParse(item["min_transfer_time"], out minTrans))
-                mMinTransferTime = minTrans; 
+            mMinTransferTime = int.TryParse(item["min_transfer_time"], out minTrans)?minTrans:(int?)null;
+
         }
         /// <summary>
         /// This is the default constructor.
@@ -108,8 +92,8 @@ namespace Stancer.GTFSEngine.Entities
         public Transfer(
             string FromStopID,
             string ToStopID,
-            TransferType TransferType,
-            int MinTransferTime       
+            TransferOptionsType TransferType,
+            int? MinTransferTime       
             )
         {
             mFromStopID=FromStopID ;
@@ -136,7 +120,7 @@ namespace Stancer.GTFSEngine.Entities
         /// <summary>
         /// Required. The transfer_type field specifies the type of connection for the specified (from_stop_id, to_stop_id) pair.
         /// </summary>
-        public TransferType TransferType
+        public TransferOptionsType TransferType
         {
             get { return mTransferType; }
         }

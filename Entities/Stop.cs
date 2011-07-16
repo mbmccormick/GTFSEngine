@@ -75,34 +75,40 @@ namespace Stancer.GTFSEngine.Entities
 
         string mName;
         string mDesc;
-        decimal? mLat;
-        decimal? mLon;
+        decimal mLat;
+        decimal mLon;
         string mZoneID;
-        string mUrl;
+
+        Uri mUrl;
 
         LocationType? mLocationType;
         string mParentStation;
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// This is the default constructor
+        /// </summary>
+        /// <param name="item"></param>
         public Stop(CSVRowItem item)
         {
-            mID = item["stop_id"];
+            mID = item.ValidateNotEmptyOrNull("stop_id");
+
             mCode = item["stop_code"];
-            mName = item["stop_name"];
+
+            mName = item.ValidateNotEmptyOrNull("stop_name");
+
             mDesc = item["stop_desc"];
+
             mLon = decimal.Parse(item["stop_lon"]);
             mLat = decimal.Parse(item["stop_lat"]);
+
             mZoneID = item["zone_id"];
 
-            //string url = item["stop_url"];
-            //mUrl = (url == null || url == "") ? (Uri)null : new Uri(url);
+            string uri = item["stop_url"];
+            mUrl = (uri == null || uri == "") ? (Uri)null : new Uri(uri);
 
-            mUrl = item["stop_url"];
-            if (item["location_type"]=="1")
-                mLocationType = Stancer.GTFSEngine.LocationType.Station;
-            else
-                mLocationType = Stancer.GTFSEngine.LocationType.Stop;
+            mLocationType = item["location_type"].ToLocationType();
 
             mParentStation = item["parent_station"];
         }
@@ -124,10 +130,10 @@ namespace Stancer.GTFSEngine.Entities
             string Code,
             string Name,
             string Desc,
-            decimal? Lon,
-            decimal? Lat,
+            decimal Lon,
+            decimal Lat,
             string ZoneID,
-            string Url,
+            Uri Url,
             LocationType? LocationType,
             string ParentStation
             )
@@ -178,20 +184,22 @@ namespace Stancer.GTFSEngine.Entities
         /// </summary>
         public string Desc { get{ return mDesc ;}}
         #endregion  
+
         #region Lon
         /// <summary>
         /// Required. The stop_lon field contains the longitude of a stop or station.
         /// The field value must be a valid WGS 84 longitude value from -180 to 180.
         /// </summary>
-        public decimal? Lon { get{ return mLon ;}}
+        public decimal Lon { get{ return mLon ;}}
         #endregion  
         #region Lat
         /// <summary>
         /// Required. The stop_lat field contains the latitude of a stop or station. 
         /// The field value must be a valid WGS 84 latitude.
         /// </summary>
-        public decimal? Lat { get{ return mLat ;}}
+        public decimal Lat { get{ return mLat ;}}
         #endregion  
+
         #region ZoneID
         /// <summary>
         /// Optional. The zone_id field defines the fare zone for a stop ID. Zone IDs are required if you want to provide fare information using fare_rules.txt. 
@@ -204,7 +212,7 @@ namespace Stancer.GTFSEngine.Entities
         /// Optional. The stop_url field contains the URL of a web page about a particular stop. 
         /// This should be different from the agency_url and the route_url fields. 
         /// </summary>
-        public string Url { get{ return mUrl ;}}
+        public Uri Url { get{ return mUrl ;}}
         #endregion  
 
         #region LocationType
