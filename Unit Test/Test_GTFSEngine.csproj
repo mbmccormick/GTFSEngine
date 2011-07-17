@@ -40,7 +40,13 @@
     <Reference Include="Caltrain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\Win7Trans\Caltrain\bin\Debug\Caltrain.dll</HintPath>
     </Reference>
+    <Reference Include="GTFSSeattle">
+      <HintPath>..\..\Win7Trans\Seattle\bin\Debug\GTFSSeattle.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NewYork">
+      <HintPath>..\..\Win7Trans\NewYork\bin\Debug\NewYork.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>

@@ -95,9 +95,7 @@
   <ItemGroup>
     <Content Include="_Ximura.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helper\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Ximura\Ximura\Ximura %28Silverlight 4%29.csproj">
       <Project>{28E2E204-A156-42E5-BE9A-6A518B4C9694}</Project>

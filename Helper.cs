@@ -71,11 +71,13 @@ namespace Stancer.GTFSEngine
                 int.Parse(item.Substring(6, 2)));
         }
 
-        public static LocationType ToLocationType(this string item)
+        public static LocationType? ToLocationType(this string item)
         {
             switch (item)
             {
                 case "":
+                case null:
+                    return null;
                 case "0":
                     return LocationType.Stop;
                 case "1":
@@ -110,10 +112,13 @@ namespace Stancer.GTFSEngine
             }
         }
 
-        public static DropOffType ToDropOffType(this string item)
+        public static DropOffType? ToDropOffType(this string item)
         {
             switch(item)
             {
+                case "":
+                case null:
+                    return null;
                 case "0":
                     return DropOffType.RegularlyScheduled;
                 case "1":
@@ -161,10 +166,13 @@ namespace Stancer.GTFSEngine
 
         }
 
-        public static PickUpType ToPickUpType(this string item)
+        public static PickUpType? ToPickUpType(this string item)
         {
             switch (item)
             {
+                case "":
+                case null:
+                    return null;
                 case "0":
                     return PickUpType.RegularlyScheduled;
                 case "1":
