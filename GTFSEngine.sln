@@ -5,10 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTFSEngine", "GTFSEngine.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ximura (4.0)", "..\Ximura\Ximura\Ximura (4.0).csproj", "{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{C5BC7426-15E9-40B9-8CF3-391465177FDB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_GTFSEngine", "Unit Test\Test_GTFSEngine.csproj", "{10FA9325-1499-4D06-95FF-85B92E839769}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,35 +87,8 @@ Global
 		{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}.XSSocNet x86 Release|x64.Build.0 = XSSocNet x86 Release|x64
 		{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}.XSSocNet x86 Release|x86.ActiveCfg = XSSocNet x86 Release|x86
 		{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}.XSSocNet x86 Release|x86.Build.0 = XSSocNet x86 Release|x86
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Release|x64.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.Release|x86.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQL|Any CPU.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQL|Any CPU.Build.0 = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQL|x64.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQL|x86.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQLBudubu|Any CPU.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQLBudubu|Any CPU.Build.0 = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQLBudubu|x64.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.SQLBudubu|x86.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x64 Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x64 Release|Any CPU.Build.0 = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x64 Release|x64.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x64 Release|x86.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x86 Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x86 Release|Any CPU.Build.0 = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x86 Release|x64.ActiveCfg = Release|Any CPU
-		{10FA9325-1499-4D06-95FF-85B92E839769}.XSSocNet x86 Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{10FA9325-1499-4D06-95FF-85B92E839769} = {C5BC7426-15E9-40B9-8CF3-391465177FDB}
 	EndGlobalSection
 EndGlobal

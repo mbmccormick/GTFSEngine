@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +46,7 @@
   <ItemGroup>
     <Compile Include="DataSources\AssemblySourceData.cs" />
     <Compile Include="DataSources\AssemblySourceDataCollection.cs" />
+    <Compile Include="DataSources\AzureStorageSourceDataCollection.cs" />
     <Compile Include="DataSources\ResourceSourceDataCollection.cs" />
     <Compile Include="DataSources\SourceDataCollectionBase.cs" />
     <Compile Include="Engine.cs" />
@@ -75,12 +77,6 @@
     <Compile Include="Interfaces\ISourceData.cs" />
     <Compile Include="Interfaces\ISourceDataCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="_Documentation\FAQ - UTF-8, UTF-16, UTF-32 &amp; BOM.mht" />
-    <None Include="_Documentation\General Transit Feed Specification - Google Code.mht" />
-    <None Include="_Documentation\RFC 2234 - Augmented BNF for Syntax Specifications ABNF.mht" />
-    <None Include="_Documentation\RFC 4180 - Common Format and MIME Type for Comma-Separated Values %28CSV%29 Files.mht" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
