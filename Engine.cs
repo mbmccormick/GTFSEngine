@@ -74,12 +74,14 @@ namespace Stancer.GTFSEngine
                 if (data == null)
                     throw new ArgumentNullException();
 
-                CSVStreamOptions opts = new CSVStreamOptions(Encoding.UTF8, ',', true, false, null, null);
+                CSVStreamOptions opts = new CSVStreamOptions(Encoding.UTF8, ',', true, true, null, null);
 
                 CSVStreamEnumerator<T> item = new CSVStreamEnumerator<T>(data, conv, opts);
 
                 foreach (var entity in item)
+                {
                     yield return entity;
+                }
             }
         }
         #endregion  
