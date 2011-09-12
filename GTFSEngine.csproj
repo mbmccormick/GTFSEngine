@@ -38,6 +38,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ximura">
+      <HintPath>Resources\Ximura.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSources\AssemblySourceData.cs" />
@@ -78,12 +81,6 @@
     <None Include="_Documentation\General Transit Feed Specification - Google Code.mht" />
     <None Include="_Documentation\RFC 2234 - Augmented BNF for Syntax Specifications ABNF.mht" />
     <None Include="_Documentation\RFC 4180 - Common Format and MIME Type for Comma-Separated Values %28CSV%29 Files.mht" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ximura\Ximura\Ximura %284.0%29.csproj">
-      <Project>{7C2684DD-A055-4A7A-88D6-EC5BAE28AEB2}</Project>
-      <Name>Ximura %284.0%29</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
