@@ -40,22 +40,29 @@ namespace Stancer.GTFSEngine
 
         public static TimeSpan ToTimeSpan(this string item)
         {
-            int hours=0, mins=0, secs=0;
+            try
+            {
+                return Convert.ToDateTime(item).TimeOfDay;
+            }
+            catch
+            {
+                int hours = 0, mins = 0, secs = 0;
 
-            if ((item.Length == 8 && 
-                (
-                    int.TryParse(item.Substring(0, 2), out hours) ||
-                    int.TryParse(item.Substring(3, 2), out mins) ||
-                    int.TryParse(item.Substring(6, 2), out secs)
-                ))
-                || 
-                (item.Length == 7 && 
-                (
-                    int.TryParse(item.Substring(0, 1), out hours) ||
-                    int.TryParse(item.Substring(2, 2), out mins) ||
-                    int.TryParse(item.Substring(5, 2), out secs)
-                )))
-                return new TimeSpan(hours, mins, secs);
+                if ((item.Length == 8 &&
+                    (
+                        int.TryParse(item.Substring(0, 2), out hours) ||
+                        int.TryParse(item.Substring(3, 2), out mins) ||
+                        int.TryParse(item.Substring(6, 2), out secs)
+                    ))
+                    ||
+                    (item.Length == 7 &&
+                    (
+                        int.TryParse(item.Substring(0, 1), out hours) ||
+                        int.TryParse(item.Substring(2, 2), out mins) ||
+                        int.TryParse(item.Substring(5, 2), out secs)
+                    )))
+                    return new TimeSpan(hours, mins, secs);
+            }
 
             throw new ArgumentException("The string is not the correct format.");     
         }
