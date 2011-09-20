@@ -44,6 +44,7 @@
     <Compile Include="DataSources\AssemblySourceData.cs" />
     <Compile Include="DataSources\AssemblySourceDataCollection.cs" />
     <Compile Include="DataSources\AzureStorageSourceDataCollection.cs" />
+    <Compile Include="DataSources\DictionarySourceDataCollection.cs" />
     <Compile Include="DataSources\ResourceSourceDataCollection.cs" />
     <Compile Include="DataSources\SourceDataCollectionBase.cs" />
     <Compile Include="Engine.cs" />
